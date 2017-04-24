@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EGg-hb-syN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EGg-hb-syN">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,7 +29,7 @@
         <!--Authorization-->
         <scene sceneID="Mks-F5-MrB">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="MXR-i4-hcq" customClass="AuthenticationViewController" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="MXR-i4-hcq" customClass="AuthenticationViewController" customModule="GitHubBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DbX-BJ-8V4"/>
                         <viewControllerLayoutGuide type="bottom" id="EZZ-T9-xZy"/>
@@ -80,14 +80,14 @@
                                             <color key="titleColor" red="0.27601413600000002" green="0.38838447729999998" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="onSignInAction:" destination="MXR-i4-hcq" eventType="touchUpInside" id="dK5-Ze-PWS"/>
+                                            <action selector="onSignInAction:" destination="MXR-i4-hcq" eventType="touchUpInside" id="PaF-xe-bBL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Rh-7r-o9b">
                                         <rect key="frame" x="104" y="436" width="112" height="30"/>
                                         <state key="normal" title="No account yet?"/>
                                         <connections>
-                                            <action selector="onNoAccountAction:" destination="MXR-i4-hcq" eventType="touchUpInside" id="OFp-0B-K25"/>
+                                            <action selector="onNoAccountAction:" destination="MXR-i4-hcq" eventType="touchUpInside" id="Qzz-oe-9sc"/>
                                         </connections>
                                     </button>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="heu-Ki-jSp">
@@ -134,21 +134,21 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="dWq-xj-Uzu">
                             <color key="tintColor" red="0.27601413600000002" green="0.38838447729999998" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="onCancelAction:" destination="MXR-i4-hcq" id="f9X-YB-aLC"/>
+                                <action selector="onCancelAction:" destination="MXR-i4-hcq" id="aIG-8C-egH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityIndicator" destination="heu-Ki-jSp" id="U0Y-KB-xNi"/>
-                        <outlet property="loginTextField" destination="kS3-Ka-THq" id="ysB-ju-FDp"/>
-                        <outlet property="passwordTextField" destination="cYc-up-R2w" id="mnI-QO-VYN"/>
-                        <outlet property="scrollView" destination="qhI-AW-D3y" id="BS2-r6-Blu"/>
+                        <outlet property="activityIndicator" destination="heu-Ki-jSp" id="W0n-AB-604"/>
+                        <outlet property="loginTextField" destination="kS3-Ka-THq" id="Q4Z-n3-uXk"/>
+                        <outlet property="passwordTextField" destination="cYc-up-R2w" id="ecW-FB-MLO"/>
+                        <outlet property="scrollView" destination="qhI-AW-D3y" id="otc-EP-c5m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F66-Y4-dUt" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="jue-9k-lrt">
                     <connections>
-                        <action selector="onTapOnViewAction:" destination="MXR-i4-hcq" id="FLQ-yc-Scm"/>
+                        <action selector="onTapAction:" destination="MXR-i4-hcq" id="4HC-D1-0Rc"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

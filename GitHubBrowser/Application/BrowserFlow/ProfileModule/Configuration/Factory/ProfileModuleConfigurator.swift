@@ -10,8 +10,7 @@ import UIKit
 
 class ProfileModuleConfigurator {
     
-    static func configurateModule(view: ProfileViewProtocol?, delegate: ProfileModuleOutputProtocol?)
-        -> (view: UIViewController?, module: ProfileModuleInputProtocol?) {
+    static func configurateModule(view: ProfileViewProtocol?, delegate: ProfileModuleOutputProtocol?) -> (view: UIViewController?, module: ProfileModuleInputProtocol?) {
         
         assert(view != nil, "Please, provide view instance.")
         
@@ -22,6 +21,9 @@ class ProfileModuleConfigurator {
         view?.output = presenter
         
         interactor.output = presenter
+        interactor.tokenStorage = SecureStorageService.sharedInstance
+//        interactor.profileNetworking = 
+        
         
         presenter.interactor = interactor
         presenter.router = router

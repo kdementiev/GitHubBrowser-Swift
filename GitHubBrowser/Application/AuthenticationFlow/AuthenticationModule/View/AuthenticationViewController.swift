@@ -8,8 +8,16 @@
 
 import UIKit
 
-class AuthenticationViewController: UIViewController, AuthenticationViewProtocol {
+class AuthenticationViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
     var output: AuthenticationViewOutput?
     
     override func viewDidLoad() {
@@ -17,26 +25,29 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
 
         // Notify presenter layer with ready state.
         self.output?.viewReadyForInteraction()
-        
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        // You can forward these method to interactor through presenter or
-        // perform subscribe via notification center inside interactor.
+    @IBAction func onTapAction(_ sender: Any) {
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func onSignInAction(_ sender: Any) {
+        
     }
-    */
+    
+    @IBAction func onNoAccountAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func onCancelAction(_ sender: Any) {
+        
+    }
+}
 
+extension AuthenticationViewController: AuthenticationViewProtocol {
+    
+}
+
+extension AuthenticationViewController: UITextFieldDelegate {
+    
 }

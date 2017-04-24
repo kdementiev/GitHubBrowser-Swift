@@ -9,7 +9,13 @@
 import Foundation
 
 protocol ProfileInteractorOutput: class {
+
+    func userAuthorized()
+    func userNotAuthorized()
     
+    func userProfileReveived(_ profile: UserProfileRecord)
+    func userRepositoriesReceived(_ repositories:[RepositoryRecord]?)
+
 }
 
 protocol ProfileInteractorProtocol: class {
@@ -19,4 +25,14 @@ protocol ProfileInteractorProtocol: class {
         Method offered to perform initial preparations inside interactor.
      */
     func prepare()
+    
+    /**
+        Offers ability to request data fetching.
+     */
+    func fetchData()
+    
+    /**
+        Immeadiatly performs sign-out for current user.
+     */
+    func performSignOut()
 }

@@ -14,9 +14,24 @@ protocol ProfileViewOutput: class {
         Called when view loaded and ready for data.
     */
     func viewReadyForInteraction()
+    
+    func userWantsToSignIn()
+    func userWantsToSignOut()
+    func userDidAcceptSignOut()
+    
+    func userWantsLatestData()
 }
 
 protocol ProfileViewProtocol: class {
     var output: ProfileViewOutput? { get set }
     
+    func showUnauthorizedState()
+    func showNoContentState()
+    
+    func showActivity()
+    
+    func showUserProfile(_ profile: UserProfileRecord)
+    func showRepositories(_ repositories:[RepositoryRecord]?)
+    
+    func showSignOutAlert()
 }

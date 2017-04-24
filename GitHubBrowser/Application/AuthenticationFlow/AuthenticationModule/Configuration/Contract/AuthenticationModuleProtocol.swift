@@ -14,4 +14,8 @@ protocol AuthenticationModuleInputProtocol: class {
 
 protocol AuthenticationModuleOutputProtocol: class {
     
+    /**
+        Called to notify other module with user authorization flow done well event.
+    */
+    func userSuccessfullySignedIn()
 }

@@ -10,4 +10,8 @@ import Foundation
 
 protocol ProfileRouterProtocol: class {
     
+    /*
+     Offers ability to navigate to AuthorizationModule and handle its actions.
+    */
+    func navigateToAuthenticationScreen(delegate: AuthenticationModuleOutputProtocol?);
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,8 +15,8 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RepositoryTableViewCell" rowHeight="82" id="DTH-mK-SZI" customClass="RepositoryTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DTH-mK-SZI" id="A8b-iD-hBA">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="81.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DTH-mK-SZI" id="A8b-iD-hBA" customClass="RepositoryTableViewCell" customModule="GitHubBrowser" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="top-shadow" translatesAutoresizingMaskIntoConstraints="NO" id="5xM-dh-zeo">
@@ -106,11 +106,12 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="authorLabel" destination="dPN-xc-Dgn" id="O3Q-25-W7o"/>
                 <outlet property="authorLable" destination="dPN-xc-Dgn" id="Nuc-TO-x7W"/>
-                <outlet property="descriptionLabel" destination="y3Y-Hb-owd" id="2kH-X6-ott"/>
-                <outlet property="languageLabel" destination="L2Z-lX-Acg" id="sQT-lX-T4d"/>
-                <outlet property="starsLabel" destination="0VP-8I-DUe" id="anb-9j-fr2"/>
-                <outlet property="titleLabel" destination="gtQ-EV-GnY" id="MpY-GO-lHd"/>
+                <outlet property="descriptionLabel" destination="y3Y-Hb-owd" id="dc6-aS-ti8"/>
+                <outlet property="languageLabel" destination="L2Z-lX-Acg" id="wjb-iz-BNo"/>
+                <outlet property="starsLabel" destination="0VP-8I-DUe" id="wXg-3G-g4Y"/>
+                <outlet property="titleLabel" destination="gtQ-EV-GnY" id="6UR-Hh-QaU"/>
             </connections>
         </tableViewCell>
     </objects>
