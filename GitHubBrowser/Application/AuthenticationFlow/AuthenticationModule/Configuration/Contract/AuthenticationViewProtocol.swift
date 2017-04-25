@@ -14,9 +14,26 @@ protocol AuthenticationViewOutput: class {
         Called when view loaded and ready for data.
     */
     func viewReadyForInteraction()
+
+    func userWantsToLogin(username: String?, password: String?)
+    func userProvidesTwoFactorCode(_ code: String?)
+    
+    func userWantsToCreateAccount()
+    func userWantsToCancel()
+    
 }
 
 protocol AuthenticationViewProtocol: class {
     var output: AuthenticationViewOutput? { get set }
+    
+    func showActivityState(_ show: Bool)
+    
+    func showInvalidCredentialsMessage()
+    func showInvalidTwoFactorCodeMessage()
+    
+    func showUserNameError()
+    func showPasswordError()
+    
+    func showTwoFactorCodeInput()
     
 }

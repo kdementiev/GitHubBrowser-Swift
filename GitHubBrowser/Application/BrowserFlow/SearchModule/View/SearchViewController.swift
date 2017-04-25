@@ -10,8 +10,9 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
-    
     var output: SearchViewOutput?
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +20,31 @@ class SearchViewController: UIViewController {
         // Notify presenter layer with ready state.
         self.output?.viewReadyForInteraction()
     }
-
-
 }
 
 extension SearchViewController: SearchViewProtocol {
+    
+    func showEmptyState() {
+        
+    }
+    
+    func showNotFoundState() {
+        
+    }
+    
+    func showSearchHistory(_ list:[String]!) {
+        
+    }
+    
+    func showSearchResults(_ repositories:[RepositoryRecord]!) {
+        
+    }
+    
+    func showActivity() {
+        
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
     
 }

@@ -14,9 +14,19 @@ protocol SearchViewOutput: class {
         Called when view loaded and ready for data.
     */
     func viewReadyForInteraction()
+    
+    func userWantsToSearch(text: String!)
+    func userWantsToCancelSearch()
 }
 
 protocol SearchViewProtocol: class {
     var output: SearchViewOutput? { get set }
+
+    func showEmptyState()
+    func showNotFoundState()
     
+    func showSearchHistory(_ list:[String]!)
+    func showSearchResults(_ repositories:[RepositoryRecord]!)
+    
+    func showActivity()
 }

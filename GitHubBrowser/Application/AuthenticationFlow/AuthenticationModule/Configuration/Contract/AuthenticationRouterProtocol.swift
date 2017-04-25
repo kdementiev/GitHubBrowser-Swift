@@ -10,4 +10,6 @@ import Foundation
 
 protocol AuthenticationRouterProtocol: class {
     
+    func navigateToCreateAccount()
+    func navigateBack()
 }

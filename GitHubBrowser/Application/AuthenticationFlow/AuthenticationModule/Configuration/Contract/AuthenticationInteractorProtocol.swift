@@ -9,6 +9,15 @@
 import Foundation
 
 protocol AuthenticationInteractorOutput: class {
+
+    func twoFactorAuthenticationRequired()
+    
+    func invalidUserName()
+    func invalidUserPassword()
+    func invalidTwoFactorCode()
+    
+    func authenticationSuccessfullyPassed()
+    func authenticationFailedWithBadCredentials()
     
 }
 
@@ -19,4 +28,7 @@ protocol AuthenticationInteractorProtocol: class {
         Method offered to perform initial preparations inside interactor.
      */
     func prepare()
+
+    func login(username: String?, password:String?)
+    func login(code: String?)
 }

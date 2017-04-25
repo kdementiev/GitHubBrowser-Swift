@@ -10,8 +10,7 @@ import UIKit
 
 class AuthenticationModuleConfigurator {
     
-    static func configurateModule(view: AuthenticationViewProtocol?, delegate: AuthenticationModuleOutputProtocol?)
-        -> (view: UIViewController?, module: AuthenticationModuleInputProtocol?) {
+    static func configurateModule(view: AuthenticationViewProtocol?, delegate: AuthenticationModuleOutputProtocol?) -> (view: UIViewController?, module: AuthenticationModuleInputProtocol?) {
         
         assert(view != nil, "Please, provide view instance.")
         
@@ -22,6 +21,9 @@ class AuthenticationModuleConfigurator {
         view?.output = presenter
         
         interactor.output = presenter
+        interactor.authService = GitHubAuthenticationService()
+        interactor.tokenStorage = SecureStorageService.sharedInstance
+        interactor.credentialsValidator = GitHubCredentialsValidator()
         
         presenter.interactor = interactor
         presenter.router = router

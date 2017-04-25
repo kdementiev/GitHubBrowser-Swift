@@ -46,6 +46,29 @@ class AuthenticationViewController: UIViewController {
 
 extension AuthenticationViewController: AuthenticationViewProtocol {
     
+    func showActivityState(_ show: Bool) {
+        
+    }
+    
+    func showInvalidCredentialsMessage() {
+        
+    }
+    
+    func showInvalidTwoFactorCodeMessage() {
+        
+    }
+    
+    func showUserNameError() {
+        
+    }
+    
+    func showPasswordError() {
+        
+    }
+    
+    func showTwoFactorCodeInput() {
+        
+    }
 }
 
 extension AuthenticationViewController: UITextFieldDelegate {

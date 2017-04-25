@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74624D6A1EAFAA9200E75B72 /* CredentialsValidatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74624D691EAFAA9200E75B72 /* CredentialsValidatorProtocol.swift */; };
+		74624D6C1EAFAB4800E75B72 /* GitHubCredentialsValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74624D6B1EAFAB4800E75B72 /* GitHubCredentialsValidator.swift */; };
+		74624D6E1EAFB07B00E75B72 /* GitHubAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74624D6D1EAFB07B00E75B72 /* GitHubAuthenticationService.swift */; };
 		747271201EADE6E000798E00 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7472711F1EADE6E000798E00 /* RepositoryTableViewCell.swift */; };
 		747271231EADE92D00798E00 /* UserProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747271221EADE92D00798E00 /* UserProfileHeaderView.swift */; };
 		747271291EADF33200798E00 /* UserProfileRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747271281EADF33200798E00 /* UserProfileRecord.swift */; };
@@ -80,6 +83,9 @@
 		04C409739B84205A0DD8E618 /* Pods_GitHubBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2796F1157458FC41E2ACD122 /* Pods_GitHubBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		422FFDF6DE8DD77F1BD86083 /* Pods-GitHubBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubBrowserTests/Pods-GitHubBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
+		74624D691EAFAA9200E75B72 /* CredentialsValidatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialsValidatorProtocol.swift; sourceTree = "<group>"; };
+		74624D6B1EAFAB4800E75B72 /* GitHubCredentialsValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubCredentialsValidator.swift; sourceTree = "<group>"; };
+		74624D6D1EAFB07B00E75B72 /* GitHubAuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAuthenticationService.swift; sourceTree = "<group>"; };
 		7472711F1EADE6E000798E00 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		747271221EADE92D00798E00 /* UserProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileHeaderView.swift; sourceTree = "<group>"; };
 		747271251EADEAD200798E00 /* PureImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PureImageView.swift; sourceTree = "<group>"; };
@@ -175,6 +181,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		74624D671EAFA97700E75B72 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				74624D681EAFAA8200E75B72 /* CredentialsValidator */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		74624D681EAFAA8200E75B72 /* CredentialsValidator */ = {
+			isa = PBXGroup;
+			children = (
+				74624D691EAFAA9200E75B72 /* CredentialsValidatorProtocol.swift */,
+				74624D6B1EAFAB4800E75B72 /* GitHubCredentialsValidator.swift */,
+			);
+			path = CredentialsValidator;
+			sourceTree = "<group>";
+		};
 		747271211EADE91E00798E00 /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				747271381EAE222D00798E00 /* Contract */,
+				74624D6D1EAFB07B00E75B72 /* GitHubAuthenticationService.swift */,
 			);
 			path = GitHubAPIService;
 			sourceTree = "<group>";
@@ -370,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				74A9388E1EABDDC500E98C78 /* Configuration */,
+				74624D671EAFA97700E75B72 /* Entity */,
 				74A938971EABDDC500E98C78 /* Interactor */,
 				74A938991EABDDC500E98C78 /* Presenter */,
 				74A9389B1EABDDC500E98C78 /* Router */,
@@ -856,6 +881,7 @@
 				74A938A71EABDDC500E98C78 /* AuthenticationRouter.swift in Sources */,
 				7472712F1EADFE3900798E00 /* UIAlertController+ProfileAlerts.swift in Sources */,
 				74A938EB1EABDDFB00E98C78 /* ProfilePresenterProtocol.swift in Sources */,
+				74624D6A1EAFAA9200E75B72 /* CredentialsValidatorProtocol.swift in Sources */,
 				74A938A41EABDDC500E98C78 /* AuthenticationModuleConfigurator.swift in Sources */,
 				7472713C1EAE227000798E00 /* SearchNetworkingServiceProtocol.swift in Sources */,
 				74A938EF1EABDDFB00E98C78 /* ProfileInteractor.swift in Sources */,
@@ -884,8 +910,10 @@
 				74A938D71EABDDF100E98C78 /* SearchViewController.swift in Sources */,
 				747271401EAE3DB000798E00 /* UnauthorizedStateDataProvider.swift in Sources */,
 				74A938A11EABDDC500E98C78 /* AuthenticationPresenterProtocol.swift in Sources */,
+				74624D6E1EAFB07B00E75B72 /* GitHubAuthenticationService.swift in Sources */,
 				74A938F11EABDDFB00E98C78 /* ProfileRouter.swift in Sources */,
 				74A938D61EABDDF100E98C78 /* SearchRouter.swift in Sources */,
+				74624D6C1EAFAB4800E75B72 /* GitHubCredentialsValidator.swift in Sources */,
 				74A939001EABE4F600E98C78 /* UITableViewCell+Usability.swift in Sources */,
 				747271431EAE3ECC00798E00 /* UnauthorizedTableViewCell.swift in Sources */,
 				747271471EAE434300798E00 /* RepositoriesDataProvider.swift in Sources */,

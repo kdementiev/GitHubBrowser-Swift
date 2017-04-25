@@ -9,14 +9,23 @@
 import Foundation
 
 protocol SearchInteractorOutput: class {
+
+    func searchHistoryFetched(_ list:[String]!)
+    func searchResultsReceived(_ repositories:[RepositoryRecord]!)
     
 }
 
 protocol SearchInteractorProtocol: class {
+    
     weak var output: SearchInteractorOutput? { get set }
     
     /**
         Method offered to perform initial preparations inside interactor.
      */
     func prepare()
+    
+    func fetchSearchHistory()
+    func searchRepositories(text: String!)
+    func cancelSearch()
+    
 }

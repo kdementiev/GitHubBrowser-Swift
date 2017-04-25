@@ -14,4 +14,16 @@ class SearchInteractor: SearchInteractorProtocol {
     func prepare() {
         
     }
+    
+    func fetchSearchHistory() {
+        
+    }
+    
+    func searchRepositories(text: String!) {
+        
+    }
+    
+    func cancelSearch() {
+        
+    }
 }

@@ -297,7 +297,7 @@
                                 <color key="barTintColor" red="0.32549019610000002" green="0.6588235294" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                 <connections>
-                                    <outlet property="delegate" destination="voY-1B-m1h" id="ROd-Lh-7tu"/>
+                                    <outlet property="delegate" destination="voY-1B-m1h" id="eXK-cT-iOo"/>
                                 </connections>
                             </searchBar>
                         </subviews>
@@ -314,7 +314,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="2cB-04-tPk"/>
                     <connections>
-                        <outlet property="searchBar" destination="jGd-t1-wbN" id="NvR-oq-dWW"/>
+                        <outlet property="searchBar" destination="jGd-t1-wbN" id="Bx7-o4-HlR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7QD-2f-Pbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
