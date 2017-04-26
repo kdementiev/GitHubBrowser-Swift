@@ -15,16 +15,16 @@ class ProfileViewController: UITableViewController {
     @IBOutlet weak var userProfileView: UserProfileHeaderView!
     @IBOutlet weak var footerView: UIView!
     
-    fileprivate var dataProvider: TableViewDataProvider? {
-        didSet {
-            self.tableView.dataSource = dataProvider
-            self.tableView.delegate = dataProvider
-            
-            // Perform table view reload with animation.
-            let sections = NSIndexSet(indexesIn: NSMakeRange(0, tableView.numberOfSections))
-            self.tableView.reloadSections(sections as IndexSet, with: .automatic)
-        }
-    }
+//    fileprivate var dataProvider: TableViewDataProvider? {
+//        didSet {
+//            self.tableView.dataSource = dataProvider
+//            self.tableView.delegate = dataProvider
+//            
+//            // Perform table view reload with animation.
+//            let sections = NSIndexSet(indexesIn: NSMakeRange(0, tableView.numberOfSections))
+//            self.tableView.reloadSections(sections as IndexSet, with: .automatic)
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +69,7 @@ class ProfileViewController: UITableViewController {
         self.tableView?.rowHeight = UITableViewAutomaticDimension;
     }
     
-    // MARK: - Controls -
+    // MARK: - User Input -
     
     @IBAction func onRefreshAction(_ sender: Any) {
         output?.userWantsLatestData()
@@ -84,14 +84,16 @@ extension ProfileViewController : ProfileViewProtocol {
     
     func showUnauthorizedState() {
 
-        self.dataProvider = UnauthorizedStateDataProvider(delegate: self);
+        // Apply unauthorized content.
+        tableView.contentProvider = UnauthorizedStateDataProvider(delegate: self);
         
+        // Change views state accourding to unauthorized state requirements
         self.activateUnauthorizedState()
     }
     
     func showNoContentState() {
         
-        self.dataProvider = NoContentStateDataProvider()
+        tableView.contentProvider = NoContentStateDataProvider()
         
         self.activateAuthorizedState()
     }
@@ -106,7 +108,7 @@ extension ProfileViewController : ProfileViewProtocol {
     }
     
     func showRepositories(_ repositories:[RepositoryRecord]?) {
-        self.dataProvider = RepositoriesDataProvider(repositories: repositories)
+        tableView.contentProvider = RepositoriesDataProvider(repositories: repositories)
     }
     
     func showSignOutAlert() {

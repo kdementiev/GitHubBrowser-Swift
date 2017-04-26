@@ -30,4 +30,8 @@ class RepositoriesDataProvider: NSObject, TableViewDataProvider {
         return cell!;
     }
     
+    deinit {
+        NSLog("RepositoriesDataProvider die.")
+    }
+    
 }
