@@ -26,6 +26,8 @@
 		747271451EAE3EDD00798E00 /* NoContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747271441EAE3EDD00798E00 /* NoContentTableViewCell.swift */; };
 		747271471EAE434300798E00 /* RepositoriesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747271461EAE434300798E00 /* RepositoriesDataProvider.swift */; };
 		747271491EAE4CCE00798E00 /* NoContentStateDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747271481EAE4CCE00798E00 /* NoContentStateDataProvider.swift */; };
+		74942BAD1EB0EE270079BAED /* UIAlertController+AuthenticationAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74942BAC1EB0EE270079BAED /* UIAlertController+AuthenticationAlerts.swift */; };
+		74942BAF1EB0F3CC0079BAED /* UITextField+ErrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74942BAE1EB0F3CC0079BAED /* UITextField+ErrorState.swift */; };
 		74A938661EABDB6E00E98C78 /* GitHubBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A938651EABDB6E00E98C78 /* GitHubBrowserTests.swift */; };
 		74A938771EABDC1200E98C78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A938711EABDC1200E98C78 /* AppDelegate.swift */; };
 		74A938781EABDC1200E98C78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A938731EABDC1200E98C78 /* Assets.xcassets */; };
@@ -102,6 +104,8 @@
 		747271441EAE3EDD00798E00 /* NoContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoContentTableViewCell.swift; sourceTree = "<group>"; };
 		747271461EAE434300798E00 /* RepositoriesDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesDataProvider.swift; sourceTree = "<group>"; };
 		747271481EAE4CCE00798E00 /* NoContentStateDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoContentStateDataProvider.swift; sourceTree = "<group>"; };
+		74942BAC1EB0EE270079BAED /* UIAlertController+AuthenticationAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+AuthenticationAlerts.swift"; sourceTree = "<group>"; };
+		74942BAE1EB0F3CC0079BAED /* UITextField+ErrorState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+ErrorState.swift"; sourceTree = "<group>"; };
 		74A9384D1EABDB6E00E98C78 /* GitHubBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A938611EABDB6E00E98C78 /* GitHubBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A938651EABDB6E00E98C78 /* GitHubBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubBrowserTests.swift; sourceTree = "<group>"; };
@@ -282,6 +286,15 @@
 				747271441EAE3EDD00798E00 /* NoContentTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		74942BAB1EB0EE030079BAED /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				74942BAC1EB0EE270079BAED /* UIAlertController+AuthenticationAlerts.swift */,
+				74942BAE1EB0F3CC0079BAED /* UITextField+ErrorState.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		74A938441EABDB6E00E98C78 = {
@@ -491,6 +504,7 @@
 		74A9389D1EABDDC500E98C78 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				74942BAB1EB0EE030079BAED /* Extensions */,
 				74A9389E1EABDDC500E98C78 /* AuthenticationViewController.swift */,
 			);
 			path = View;
@@ -892,11 +906,13 @@
 				7472713A1EAE225A00798E00 /* ProfileNetworkingServiceProtocol.swift in Sources */,
 				74A938771EABDC1200E98C78 /* AppDelegate.swift in Sources */,
 				74A938F21EABDDFB00E98C78 /* ProfileViewController.swift in Sources */,
+				74942BAD1EB0EE270079BAED /* UIAlertController+AuthenticationAlerts.swift in Sources */,
 				74A938E91EABDDFB00E98C78 /* ProfileInteractorProtocol.swift in Sources */,
 				74A938D11EABDDF100E98C78 /* SearchRouterProtocol.swift in Sources */,
 				74A938D31EABDDF100E98C78 /* SearchModuleConfigurator.swift in Sources */,
 				74A938ED1EABDDFB00E98C78 /* ProfileViewProtocol.swift in Sources */,
 				747271491EAE4CCE00798E00 /* NoContentStateDataProvider.swift in Sources */,
+				74942BAF1EB0F3CC0079BAED /* UITextField+ErrorState.swift in Sources */,
 				74A938A51EABDDC500E98C78 /* AuthenticationInteractor.swift in Sources */,
 				74A938EE1EABDDFB00E98C78 /* ProfileModuleConfigurator.swift in Sources */,
 				7472712B1EADF39400798E00 /* RepositoryRecord.swift in Sources */,

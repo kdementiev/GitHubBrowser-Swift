@@ -24,12 +24,12 @@ class AuthenticationInteractor: AuthenticationInteractorProtocol {
     
     func login(username: String?, password:String?) {
         
-        guard let _ = credentialsValidator?.validate(username: username) else {
+        guard credentialsValidator!.validate(username: username) else {
             output?.invalidUserName()
             return
         }
         
-        guard let _ = credentialsValidator?.validate(password: password) else {
+        guard credentialsValidator!.validate(password: password) else {
             output?.invalidUserPassword()
             return
         }
@@ -43,7 +43,7 @@ class AuthenticationInteractor: AuthenticationInteractorProtocol {
     
     func login(code: String?) {
         
-        guard let _ = credentialsValidator?.validate(otp: code) else {
+        guard credentialsValidator!.validate(otp: code) else {
             output?.invalidTwoFactorCode()
             return
         }
