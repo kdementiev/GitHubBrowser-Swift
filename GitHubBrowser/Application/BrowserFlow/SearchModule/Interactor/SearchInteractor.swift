@@ -11,6 +11,9 @@ import Foundation
 class SearchInteractor: SearchInteractorProtocol {
     var output: SearchInteractorOutput?
     
+    var searchNetworking: SearchNetworkingServiceProtocol?
+    
+    
     func prepare() {
         
     }

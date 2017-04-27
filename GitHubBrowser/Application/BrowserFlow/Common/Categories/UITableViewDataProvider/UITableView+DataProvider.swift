@@ -19,12 +19,15 @@ extension UITableView {
         set {
             objc_setAssociatedObject(self, Unmanaged.passUnretained(self).toOpaque(), newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             
+            // Apply new data provider
             self.delegate = newValue
             self.dataSource = newValue
             
-            // Force reload with animation.
-            let sections = NSIndexSet(indexesIn: NSMakeRange(0, self.numberOfSections))
-            self.reloadSections(sections as IndexSet, with: .automatic)
+            // Offer preparation for data provider.
+            newValue?.prepare(tableView: self)
+            
+            // Reload table view
+            newValue?.reloadData(self)
         }
     }
 }

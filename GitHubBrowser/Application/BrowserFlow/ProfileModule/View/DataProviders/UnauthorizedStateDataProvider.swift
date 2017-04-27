@@ -21,10 +21,10 @@ class UnauthorizedStateDataProvider: NSObject, TableViewDataProvider {
     }
     
     func prepare(tableView: UITableView!) {
-        
     }
-    
-    // MARK - UITableViewDataSource -
+}
+
+extension UnauthorizedStateDataProvider: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -39,4 +39,5 @@ class UnauthorizedStateDataProvider: NSObject, TableViewDataProvider {
         
         return cell!;
     }
+    
 }

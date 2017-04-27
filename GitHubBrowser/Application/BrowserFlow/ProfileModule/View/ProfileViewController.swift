@@ -64,9 +64,6 @@ class ProfileViewController: UITableViewController {
         let bottomInset = self.tabBarController?.tabBar.bounds.size.height ?? 0
         
         self.tableView?.contentInset = UIEdgeInsetsMake(topInset, 0, bottomInset, 0)
-        
-        self.tableView?.estimatedRowHeight = 82;
-        self.tableView?.rowHeight = UITableViewAutomaticDimension;
     }
     
     // MARK: - User Input -

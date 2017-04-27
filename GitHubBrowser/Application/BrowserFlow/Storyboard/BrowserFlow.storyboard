@@ -206,7 +206,7 @@
                                 <color key="backgroundColor" red="0.32549019610000002" green="0.6588235294" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.27601413600000002" green="0.38838447729999998" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QueryTableViewCell" rowHeight="49" id="ma6-WF-8LS" customClass="QueryTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QueryTableViewCell" rowHeight="49" id="ma6-WF-8LS" customClass="QueryTableViewCell" customModule="GitHubBrowser" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ma6-WF-8LS" id="inc-eB-L0b">
@@ -232,10 +232,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="queryLabel" destination="qZg-iS-s2n" id="QBX-pG-wX4"/>
+                                            <outlet property="queryLabel" destination="qZg-iS-s2n" id="xGC-2r-FEq"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityTableViewCell" rowHeight="68" id="uHj-4G-naX" customClass="ActivityTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityTableViewCell" rowHeight="68" id="uHj-4G-naX" customClass="ActivityTableViewCell" customModule="GitHubBrowser" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="77" width="320" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uHj-4G-naX" id="Gap-bE-kTp">
@@ -255,7 +255,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="activityIndicator" destination="iNn-bT-1Fd" id="1y2-56-Hoa"/>
+                                            <outlet property="activityIndicator" destination="iNn-bT-1Fd" id="WJ5-1W-QVY"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NothingFoundTableViewCell" rowHeight="140" id="wO4-x7-XbW">
@@ -315,6 +315,7 @@
                     <tabBarItem key="tabBarItem" systemItem="search" id="2cB-04-tPk"/>
                     <connections>
                         <outlet property="searchBar" destination="jGd-t1-wbN" id="Bx7-o4-HlR"/>
+                        <outlet property="tableView" destination="HzG-FZ-dBi" id="W2m-tY-Y7O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7QD-2f-Pbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
