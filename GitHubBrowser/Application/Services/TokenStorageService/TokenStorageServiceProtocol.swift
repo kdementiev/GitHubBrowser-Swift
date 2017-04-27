@@ -9,6 +9,10 @@
 import Foundation
 import PromiseKit
 
+enum TokenStorageServiceError: Error {
+    case NoTokenFound
+}
+
 protocol TokenStorageServiceProtocol: class {
     
     /**

@@ -13,6 +13,7 @@ class GitHubAuthenticationService: AuthNetworkingServiceProtocol {
 
     func login(withCredentials credentials: AuthCredentials) -> Promise<String> {
         return Promise { fulfill, reject in
+            
             reject(AuthenticationServiceError.BadCredentials)
         }
     }
