@@ -10,8 +10,7 @@ import UIKit
 
 class SearchModuleConfigurator {
     
-    static func configurateModule(view: SearchViewProtocol?, delegate: SearchModuleOutputProtocol?)
-        -> (view: UIViewController?, module: SearchModuleInputProtocol?) {
+    static func configurateModule(view: SearchViewProtocol?, delegate: SearchModuleOutputProtocol?) -> (view: UIViewController?, module: SearchModuleInputProtocol?) {
         
         assert(view != nil, "Please, provide view instance.")
         
@@ -22,7 +21,8 @@ class SearchModuleConfigurator {
         view?.output = presenter
         
         interactor.output = presenter
-        
+        interactor.searchNetworking = GitHubSearchService()
+  
         presenter.interactor = interactor
         presenter.router = router
         presenter.view = view

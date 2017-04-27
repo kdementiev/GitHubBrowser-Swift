@@ -61,7 +61,7 @@ extension ProfileInteractor: ProfileInteractorProtocol {
             self.processWithAuthorizedState()
             
             // Prepare networking service with token.
-            self.profileNetworking?.prepare(token: token)
+            self.profileNetworking?.prepare(withToken: token)
             
             // Try to fetch data with new token.
             self.fetchData()

@@ -17,10 +17,6 @@ class SecureStorageService: TokenStorageServiceProtocol {
         static let tokenAccessKey = "token_id"
     }
     
-    // Errors
-    static let NoTokenFoundErrorDomain = "education.ghbrowser.secure-storage.error.token"
-    
-    
     private var keychain = KeychainSwift()
     static let sharedInstance = SecureStorageService()
     
@@ -41,7 +37,7 @@ class SecureStorageService: TokenStorageServiceProtocol {
         return Promise { fulfill, reject in
             
             guard let token = keychain.get(Keychain.tokenAccessKey) else {
-                reject(NSError(domain: SecureStorageService.NoTokenFoundErrorDomain, code: 0, userInfo: nil))
+                reject(TokenStorageServiceError.NoTokenFound)
                 return
             }
             

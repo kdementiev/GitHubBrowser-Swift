@@ -32,5 +32,5 @@ protocol AuthNetworkingServiceProtocol {
      - parameter credentials: AuthCredentials instance.
      - returns: A promise that offers toy handle auth flow events.
      */
-    func login(credentials: AuthCredentials) -> Promise<String>
+    func login(withCredentials credentials: AuthCredentials) -> Promise<String>
 }

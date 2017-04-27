@@ -9,10 +9,15 @@
 import Foundation
 import PromiseKit
 
+enum TokenStorageServiceError: Error {
+    case NoTokenFound
+}
+
 protocol TokenStorageServiceProtocol: class {
     
     /**
         Offers method to save token securely.
+        - parameter token: Auth2 token.
     */
     func saveTokenToSecureStorage(_ token: String!)
     
@@ -23,6 +28,7 @@ protocol TokenStorageServiceProtocol: class {
     
     /**
         Offers method that returns Token promise. Fetching can be async.
+        - returns: A promise to get token.
     */
     func fetchTokenFromSecureStorage() -> Promise<String>
 }

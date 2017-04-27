@@ -11,8 +11,9 @@ import Alamofire
 
 class GitHubAuthenticationService: AuthNetworkingServiceProtocol {
 
-    func login(credentials: AuthCredentials) -> Promise<String> {
+    func login(withCredentials credentials: AuthCredentials) -> Promise<String> {
         return Promise { fulfill, reject in
+            
             reject(AuthenticationServiceError.BadCredentials)
         }
     }

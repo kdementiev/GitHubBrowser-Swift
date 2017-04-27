@@ -60,7 +60,7 @@ class AuthenticationInteractor: AuthenticationInteractorProtocol {
     
     private func login(credentials: AuthCredentials) {
         
-        authService?.login(credentials: credentials).then { token -> Void in
+        authService?.login(withCredentials: credentials).then { token -> Void in
             
             self.tokenStorage?.saveTokenToSecureStorage(token)
             self.output?.authenticationSuccessfullyPassed()

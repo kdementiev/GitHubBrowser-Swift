@@ -20,11 +20,12 @@ class ProfileModuleConfigurator {
         
         view?.output = presenter
         
+        // Prepare Interactor layer
         interactor.output = presenter
         interactor.tokenStorage = SecureStorageService.sharedInstance
-//        interactor.profileNetworking = 
+        interactor.profileNetworking = GitHubUserProfileService()
         
-        
+        // Prepare presenter layer
         presenter.interactor = interactor
         presenter.router = router
         presenter.view = view

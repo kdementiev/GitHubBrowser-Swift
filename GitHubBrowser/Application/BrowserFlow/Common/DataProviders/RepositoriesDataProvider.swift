@@ -8,17 +8,34 @@
 
 import UIKit
 
-class RepositoriesDataProvider: NSObject, TableViewDataProvider {
+class RepositoriesDataProvider: NSObject {
     
-    private var repositories: [RepositoryRecord]?
+    fileprivate let CellEstimatedHeight: CGFloat = 82
+    
+    fileprivate var repositories: [RepositoryRecord]?
     
     init(repositories: [RepositoryRecord]?) {
         self.repositories = repositories
     }
     
-    func prepare(tableView: UITableView!) {
-        RepositoryTableViewCell.registerCell(tableView: tableView)
+    deinit {
+        NSLog("RepositoriesDataProvider die.")
     }
+}
+
+extension RepositoriesDataProvider: TableViewDataProvider {
+    
+    func prepare(tableView: UITableView!) {
+        // We need to register our cell.
+        RepositoryTableViewCell.registerCell(tableView: tableView)
+        
+        // Prepare auto-sized cells.
+        tableView.estimatedRowHeight = CellEstimatedHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
+}
+
+extension RepositoriesDataProvider: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repositories?.count ?? 0
@@ -27,11 +44,8 @@ class RepositoriesDataProvider: NSObject, TableViewDataProvider {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = RepositoryTableViewCell.reusableCell(tableView: tableView)
         
+        // TODO: Perform cell setting-up.
+        
         return cell!;
     }
-    
-    deinit {
-        NSLog("RepositoriesDataProvider die.")
-    }
-    
 }
