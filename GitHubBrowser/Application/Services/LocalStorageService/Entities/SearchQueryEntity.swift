@@ -11,6 +11,6 @@ import CoreData
 class SearchQueryEntity: NSManagedObject {
     
     @NSManaged var query: String?
-    @NSManaged var queryDate: String?
-    
+    @NSManaged var queryDate: Date?
+
 }

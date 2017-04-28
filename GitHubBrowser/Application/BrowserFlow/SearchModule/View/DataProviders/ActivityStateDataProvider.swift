@@ -10,6 +10,9 @@ import UIKit
 
 class ActivityStateDataProvider: NSObject {
 
+    deinit {
+        NSLog("ActivityStateDataProvider die.")
+    }
 }
 
 extension ActivityStateDataProvider: TableViewDataProvider {

@@ -10,7 +10,7 @@ import Foundation
 
 protocol SearchInteractorOutput: class {
 
-    func searchHistoryFetched(_ list:[String]!)
+    func searchHistoryFetched(_ list:[SearchQueryRecord]!)
     func searchResultsReceived(_ repositories:[RepositoryRecord]!)
     
 }

@@ -25,7 +25,7 @@ protocol SearchViewProtocol: class {
     func showEmptyState()
     func showNotFoundState()
     
-    func showSearchHistory(_ list:[String]!)
+    func showSearchHistory(_ list:[SearchQueryRecord]!)
     func showSearchResults(_ repositories:[RepositoryRecord]!)
     
     func showActivity()

@@ -11,6 +11,5 @@ import Foundation
 struct SearchQueryRecord {
     
     var query: String?
-    var date: String?
-    
+    var date: Date?
 }

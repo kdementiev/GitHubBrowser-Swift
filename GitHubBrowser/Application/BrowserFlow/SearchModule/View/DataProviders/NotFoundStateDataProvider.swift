@@ -11,12 +11,17 @@ import UIKit
 class NotFoundStateDataProvider: NSObject {
     
     fileprivate static let NothingFoundTableViewCellIdentifier = "NothingFoundTableViewCell"
+    
+    deinit {
+        NSLog("NotFoundStateDataProvider die.")
+    }
 }
 
 extension NotFoundStateDataProvider: TableViewDataProvider {
     
     func prepare(tableView: UITableView!) {
     }
+    
 }
 
 extension NotFoundStateDataProvider: UITableViewDataSource {
