@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		74624D6A1EAFAA9200E75B72 /* CredentialsValidatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74624D691EAFAA9200E75B72 /* CredentialsValidatorProtocol.swift */; };
 		74624D6C1EAFAB4800E75B72 /* GitHubCredentialsValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74624D6B1EAFAB4800E75B72 /* GitHubCredentialsValidator.swift */; };
-		74624D6E1EAFB07B00E75B72 /* GitHubAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74624D6D1EAFB07B00E75B72 /* GitHubAuthenticationService.swift */; };
 		747271201EADE6E000798E00 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7472711F1EADE6E000798E00 /* RepositoryTableViewCell.swift */; };
 		747271231EADE92D00798E00 /* UserProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747271221EADE92D00798E00 /* UserProfileHeaderView.swift */; };
 		747271291EADF33200798E00 /* UserProfileRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747271281EADF33200798E00 /* UserProfileRecord.swift */; };
@@ -18,9 +17,6 @@
 		747271301EAE026500798E00 /* PureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747271251EADEAD200798E00 /* PureImageView.swift */; };
 		747271351EAE19A000798E00 /* TokenStorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747271341EAE19A000798E00 /* TokenStorageServiceProtocol.swift */; };
 		747271371EAE1C6900798E00 /* SecureStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747271361EAE1C6900798E00 /* SecureStorageService.swift */; };
-		7472713A1EAE225A00798E00 /* ProfileNetworkingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747271391EAE225A00798E00 /* ProfileNetworkingServiceProtocol.swift */; };
-		7472713C1EAE227000798E00 /* SearchNetworkingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7472713B1EAE227000798E00 /* SearchNetworkingServiceProtocol.swift */; };
-		7472713E1EAE229400798E00 /* AuthNetworkingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7472713D1EAE229400798E00 /* AuthNetworkingServiceProtocol.swift */; };
 		747271401EAE3DB000798E00 /* UnauthorizedStateDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7472713F1EAE3DB000798E00 /* UnauthorizedStateDataProvider.swift */; };
 		747271431EAE3ECC00798E00 /* UnauthorizedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747271421EAE3ECC00798E00 /* UnauthorizedTableViewCell.swift */; };
 		747271451EAE3EDD00798E00 /* NoContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747271441EAE3EDD00798E00 /* NoContentTableViewCell.swift */; };
@@ -68,14 +64,23 @@
 		74A938FA1EABDEB700E98C78 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74A938F91EABDEB700E98C78 /* RepositoryTableViewCell.xib */; };
 		74A938FC1EABDEBE00E98C78 /* BrowserFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A938FB1EABDEBE00E98C78 /* BrowserFlow.storyboard */; };
 		74A939001EABE4F600E98C78 /* UITableViewCell+Usability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A938FF1EABE4F600E98C78 /* UITableViewCell+Usability.swift */; };
+		74A9390F1EB1238600E98C78 /* LocalStorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9390E1EB1238600E98C78 /* LocalStorageServiceProtocol.swift */; };
+		74A939111EB123A500E98C78 /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A939101EB123A500E98C78 /* LocalStorageService.swift */; };
+		74A939151EB124EB00E98C78 /* SearchHistoryStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74A939131EB124EB00E98C78 /* SearchHistoryStorage.xcdatamodeld */; };
+		74A939171EB1255700E98C78 /* SearchQueryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A939161EB1255700E98C78 /* SearchQueryEntity.swift */; };
+		74A939191EB1266F00E98C78 /* SearchQueryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A939181EB1266F00E98C78 /* SearchQueryRecord.swift */; };
+		74A939221EB2946900E98C78 /* AuthNetworkingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9391C1EB2946900E98C78 /* AuthNetworkingServiceProtocol.swift */; };
+		74A939231EB2946900E98C78 /* ProfileNetworkingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9391D1EB2946900E98C78 /* ProfileNetworkingServiceProtocol.swift */; };
+		74A939241EB2946900E98C78 /* SearchNetworkingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9391E1EB2946900E98C78 /* SearchNetworkingServiceProtocol.swift */; };
+		74A939251EB2946900E98C78 /* GitHubAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9391F1EB2946900E98C78 /* GitHubAuthenticationService.swift */; };
+		74A939261EB2946900E98C78 /* GitHubSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A939201EB2946900E98C78 /* GitHubSearchService.swift */; };
+		74A939271EB2946900E98C78 /* GitHubUserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A939211EB2946900E98C78 /* GitHubUserProfileService.swift */; };
 		74F007BC1EB2410000CE4CF6 /* SearchRepositoriesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F007BB1EB2410000CE4CF6 /* SearchRepositoriesDataProvider.swift */; };
 		74F007BE1EB241CA00CE4CF6 /* NotFoundStateDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F007BD1EB241CA00CE4CF6 /* NotFoundStateDataProvider.swift */; };
 		74F007C01EB2430D00CE4CF6 /* SearchHistoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F007BF1EB2430D00CE4CF6 /* SearchHistoryDataProvider.swift */; };
 		74F007C21EB244C700CE4CF6 /* QueryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F007C11EB244C700CE4CF6 /* QueryTableViewCell.swift */; };
 		74F007C41EB244D600CE4CF6 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F007C31EB244D600CE4CF6 /* ActivityTableViewCell.swift */; };
 		74F007C71EB247F700CE4CF6 /* ActivityStateDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F007C51EB2479D00CE4CF6 /* ActivityStateDataProvider.swift */; };
-		74F007C91EB2505700CE4CF6 /* GitHubSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F007C81EB2505700CE4CF6 /* GitHubSearchService.swift */; };
-		74F007CB1EB2506D00CE4CF6 /* GitHubUserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F007CA1EB2506D00CE4CF6 /* GitHubUserProfileService.swift */; };
 		7715A652D6961110B7057E87 /* Pods_GitHubBrowserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2796F1157458FC41E2ACD122 /* Pods_GitHubBrowserTests.framework */; };
 		CAA9AE365DDE8ED509141BDD /* Pods_GitHubBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C409739B84205A0DD8E618 /* Pods_GitHubBrowser.framework */; };
 /* End PBXBuildFile section */
@@ -96,7 +101,6 @@
 		422FFDF6DE8DD77F1BD86083 /* Pods-GitHubBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubBrowserTests/Pods-GitHubBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		74624D691EAFAA9200E75B72 /* CredentialsValidatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialsValidatorProtocol.swift; sourceTree = "<group>"; };
 		74624D6B1EAFAB4800E75B72 /* GitHubCredentialsValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubCredentialsValidator.swift; sourceTree = "<group>"; };
-		74624D6D1EAFB07B00E75B72 /* GitHubAuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAuthenticationService.swift; sourceTree = "<group>"; };
 		7472711F1EADE6E000798E00 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		747271221EADE92D00798E00 /* UserProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileHeaderView.swift; sourceTree = "<group>"; };
 		747271251EADEAD200798E00 /* PureImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PureImageView.swift; sourceTree = "<group>"; };
@@ -105,9 +109,6 @@
 		7472712E1EADFE3900798E00 /* UIAlertController+ProfileAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+ProfileAlerts.swift"; sourceTree = "<group>"; };
 		747271341EAE19A000798E00 /* TokenStorageServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenStorageServiceProtocol.swift; sourceTree = "<group>"; };
 		747271361EAE1C6900798E00 /* SecureStorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStorageService.swift; sourceTree = "<group>"; };
-		747271391EAE225A00798E00 /* ProfileNetworkingServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNetworkingServiceProtocol.swift; sourceTree = "<group>"; };
-		7472713B1EAE227000798E00 /* SearchNetworkingServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNetworkingServiceProtocol.swift; sourceTree = "<group>"; };
-		7472713D1EAE229400798E00 /* AuthNetworkingServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthNetworkingServiceProtocol.swift; sourceTree = "<group>"; };
 		7472713F1EAE3DB000798E00 /* UnauthorizedStateDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnauthorizedStateDataProvider.swift; sourceTree = "<group>"; };
 		747271421EAE3ECC00798E00 /* UnauthorizedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnauthorizedTableViewCell.swift; sourceTree = "<group>"; };
 		747271441EAE3EDD00798E00 /* NoContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoContentTableViewCell.swift; sourceTree = "<group>"; };
@@ -159,14 +160,23 @@
 		74A938F91EABDEB700E98C78 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
 		74A938FB1EABDEBE00E98C78 /* BrowserFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BrowserFlow.storyboard; sourceTree = "<group>"; };
 		74A938FF1EABE4F600E98C78 /* UITableViewCell+Usability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Usability.swift"; sourceTree = "<group>"; };
+		74A9390E1EB1238600E98C78 /* LocalStorageServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageServiceProtocol.swift; sourceTree = "<group>"; };
+		74A939101EB123A500E98C78 /* LocalStorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
+		74A939141EB124EB00E98C78 /* SearchHistoryStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SearchHistoryStorage.xcdatamodel; sourceTree = "<group>"; };
+		74A939161EB1255700E98C78 /* SearchQueryEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchQueryEntity.swift; sourceTree = "<group>"; };
+		74A939181EB1266F00E98C78 /* SearchQueryRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchQueryRecord.swift; sourceTree = "<group>"; };
+		74A9391C1EB2946900E98C78 /* AuthNetworkingServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthNetworkingServiceProtocol.swift; sourceTree = "<group>"; };
+		74A9391D1EB2946900E98C78 /* ProfileNetworkingServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNetworkingServiceProtocol.swift; sourceTree = "<group>"; };
+		74A9391E1EB2946900E98C78 /* SearchNetworkingServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNetworkingServiceProtocol.swift; sourceTree = "<group>"; };
+		74A9391F1EB2946900E98C78 /* GitHubAuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAuthenticationService.swift; sourceTree = "<group>"; };
+		74A939201EB2946900E98C78 /* GitHubSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubSearchService.swift; sourceTree = "<group>"; };
+		74A939211EB2946900E98C78 /* GitHubUserProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubUserProfileService.swift; sourceTree = "<group>"; };
 		74F007BB1EB2410000CE4CF6 /* SearchRepositoriesDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRepositoriesDataProvider.swift; sourceTree = "<group>"; };
 		74F007BD1EB241CA00CE4CF6 /* NotFoundStateDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotFoundStateDataProvider.swift; sourceTree = "<group>"; };
 		74F007BF1EB2430D00CE4CF6 /* SearchHistoryDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryDataProvider.swift; sourceTree = "<group>"; };
 		74F007C11EB244C700CE4CF6 /* QueryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryTableViewCell.swift; sourceTree = "<group>"; };
 		74F007C31EB244D600CE4CF6 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		74F007C51EB2479D00CE4CF6 /* ActivityStateDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityStateDataProvider.swift; sourceTree = "<group>"; };
-		74F007C81EB2505700CE4CF6 /* GitHubSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubSearchService.swift; sourceTree = "<group>"; };
-		74F007CA1EB2506D00CE4CF6 /* GitHubUserProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubUserProfileService.swift; sourceTree = "<group>"; };
 		796D54FF5689ADFFE4F65BD5 /* Pods-GitHubBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubBrowser/Pods-GitHubBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		84008019A537650DA6E9C42C /* Pods-GitHubBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubBrowser/Pods-GitHubBrowser.release.xcconfig"; sourceTree = "<group>"; };
 		F7D3A753C7AF0B96AC9C942D /* Pods-GitHubBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubBrowserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubBrowserTests/Pods-GitHubBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -241,6 +251,7 @@
 			children = (
 				747271281EADF33200798E00 /* UserProfileRecord.swift */,
 				7472712A1EADF39400798E00 /* RepositoryRecord.swift */,
+				74A939181EB1266F00E98C78 /* SearchQueryRecord.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -262,24 +273,6 @@
 			path = Alerts;
 			sourceTree = "<group>";
 		};
-		747271311EAE196900798E00 /* GitHubAPIService */ = {
-			isa = PBXGroup;
-			children = (
-				747271381EAE222D00798E00 /* Contract */,
-				74624D6D1EAFB07B00E75B72 /* GitHubAuthenticationService.swift */,
-				74F007C81EB2505700CE4CF6 /* GitHubSearchService.swift */,
-				74F007CA1EB2506D00CE4CF6 /* GitHubUserProfileService.swift */,
-			);
-			path = GitHubAPIService;
-			sourceTree = "<group>";
-		};
-		747271321EAE196900798E00 /* LocalStorageService */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LocalStorageService;
-			sourceTree = "<group>";
-		};
 		747271331EAE196900798E00 /* TokenStorageService */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,16 +280,6 @@
 				747271361EAE1C6900798E00 /* SecureStorageService.swift */,
 			);
 			path = TokenStorageService;
-			sourceTree = "<group>";
-		};
-		747271381EAE222D00798E00 /* Contract */ = {
-			isa = PBXGroup;
-			children = (
-				747271391EAE225A00798E00 /* ProfileNetworkingServiceProtocol.swift */,
-				7472713B1EAE227000798E00 /* SearchNetworkingServiceProtocol.swift */,
-				7472713D1EAE229400798E00 /* AuthNetworkingServiceProtocol.swift */,
-			);
-			path = Contract;
 			sourceTree = "<group>";
 		};
 		747271411EAE3E9400798E00 /* Cells */ = {
@@ -437,8 +420,8 @@
 		74A9387E1EABDD5500E98C78 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				747271311EAE196900798E00 /* GitHubAPIService */,
-				747271321EAE196900798E00 /* LocalStorageService */,
+				74A9391A1EB2946900E98C78 /* GitHubAPI */,
+				74A939091EB1235D00E98C78 /* LocalStorageService */,
 				747271331EAE196900798E00 /* TokenStorageService */,
 			);
 			path = Services;
@@ -724,6 +707,46 @@
 			path = ReusableCells;
 			sourceTree = "<group>";
 		};
+		74A939091EB1235D00E98C78 /* LocalStorageService */ = {
+			isa = PBXGroup;
+			children = (
+				74A939121EB124EB00E98C78 /* Entities */,
+				74A939131EB124EB00E98C78 /* SearchHistoryStorage.xcdatamodeld */,
+				74A9390E1EB1238600E98C78 /* LocalStorageServiceProtocol.swift */,
+				74A939101EB123A500E98C78 /* LocalStorageService.swift */,
+			);
+			path = LocalStorageService;
+			sourceTree = "<group>";
+		};
+		74A939121EB124EB00E98C78 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				74A939161EB1255700E98C78 /* SearchQueryEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		74A9391A1EB2946900E98C78 /* GitHubAPI */ = {
+			isa = PBXGroup;
+			children = (
+				74A9391B1EB2946900E98C78 /* Contract */,
+				74A9391F1EB2946900E98C78 /* GitHubAuthenticationService.swift */,
+				74A939201EB2946900E98C78 /* GitHubSearchService.swift */,
+				74A939211EB2946900E98C78 /* GitHubUserProfileService.swift */,
+			);
+			path = GitHubAPI;
+			sourceTree = "<group>";
+		};
+		74A9391B1EB2946900E98C78 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				74A9391C1EB2946900E98C78 /* AuthNetworkingServiceProtocol.swift */,
+				74A9391D1EB2946900E98C78 /* ProfileNetworkingServiceProtocol.swift */,
+				74A9391E1EB2946900E98C78 /* SearchNetworkingServiceProtocol.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
 		D1AC327354F024BA22BD1B03 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -854,7 +877,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		1F373B3CEEEDBA74A1352261 /* [CP] Embed Pods Frameworks */ = {
@@ -914,7 +937,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F0CC595FDE86E5960C836F2A /* [CP] Copy Pods Resources */ = {
@@ -940,28 +963,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				74A938CE1EABDDF100E98C78 /* SearchInteractorProtocol.swift in Sources */,
+				74A939111EB123A500E98C78 /* LocalStorageService.swift in Sources */,
 				74A938A31EABDDC500E98C78 /* AuthenticationViewProtocol.swift in Sources */,
 				74F007C41EB244D600CE4CF6 /* ActivityTableViewCell.swift in Sources */,
 				747271371EAE1C6900798E00 /* SecureStorageService.swift in Sources */,
 				74A9389F1EABDDC500E98C78 /* AuthenticationInteractorProtocol.swift in Sources */,
+				74A939221EB2946900E98C78 /* AuthNetworkingServiceProtocol.swift in Sources */,
 				74A938A71EABDDC500E98C78 /* AuthenticationRouter.swift in Sources */,
 				7472712F1EADFE3900798E00 /* UIAlertController+ProfileAlerts.swift in Sources */,
+				74A939241EB2946900E98C78 /* SearchNetworkingServiceProtocol.swift in Sources */,
 				74A938EB1EABDDFB00E98C78 /* ProfilePresenterProtocol.swift in Sources */,
 				74624D6A1EAFAA9200E75B72 /* CredentialsValidatorProtocol.swift in Sources */,
 				74A938A41EABDDC500E98C78 /* AuthenticationModuleConfigurator.swift in Sources */,
-				7472713C1EAE227000798E00 /* SearchNetworkingServiceProtocol.swift in Sources */,
 				74F007BC1EB2410000CE4CF6 /* SearchRepositoriesDataProvider.swift in Sources */,
 				74A938EF1EABDDFB00E98C78 /* ProfileInteractor.swift in Sources */,
 				74A938D51EABDDF100E98C78 /* SearchPresenter.swift in Sources */,
 				74A938CF1EABDDF100E98C78 /* SearchModuleProtocol.swift in Sources */,
 				74A938D21EABDDF100E98C78 /* SearchViewProtocol.swift in Sources */,
+				74A939151EB124EB00E98C78 /* SearchHistoryStorage.xcdatamodeld in Sources */,
 				74942BB81EB106760079BAED /* UITableView+DataProvider.swift in Sources */,
+				74A939231EB2946900E98C78 /* ProfileNetworkingServiceProtocol.swift in Sources */,
 				74A938D01EABDDF100E98C78 /* SearchPresenterProtocol.swift in Sources */,
-				7472713A1EAE225A00798E00 /* ProfileNetworkingServiceProtocol.swift in Sources */,
 				74A938771EABDC1200E98C78 /* AppDelegate.swift in Sources */,
 				74A938F21EABDDFB00E98C78 /* ProfileViewController.swift in Sources */,
 				74942BAD1EB0EE270079BAED /* UIAlertController+AuthenticationAlerts.swift in Sources */,
 				74A938E91EABDDFB00E98C78 /* ProfileInteractorProtocol.swift in Sources */,
+				74A9390F1EB1238600E98C78 /* LocalStorageServiceProtocol.swift in Sources */,
 				74A938D11EABDDF100E98C78 /* SearchRouterProtocol.swift in Sources */,
 				74A938D31EABDDF100E98C78 /* SearchModuleConfigurator.swift in Sources */,
 				74A938ED1EABDDFB00E98C78 /* ProfileViewProtocol.swift in Sources */,
@@ -974,17 +1001,19 @@
 				74A938EA1EABDDFB00E98C78 /* ProfileModuleProtocol.swift in Sources */,
 				74F007C01EB2430D00CE4CF6 /* SearchHistoryDataProvider.swift in Sources */,
 				74A938D41EABDDF100E98C78 /* SearchInteractor.swift in Sources */,
+				74A939171EB1255700E98C78 /* SearchQueryEntity.swift in Sources */,
 				747271351EAE19A000798E00 /* TokenStorageServiceProtocol.swift in Sources */,
 				747271231EADE92D00798E00 /* UserProfileHeaderView.swift in Sources */,
 				747271301EAE026500798E00 /* PureImageView.swift in Sources */,
 				74A938A81EABDDC500E98C78 /* AuthenticationViewController.swift in Sources */,
+				74A939261EB2946900E98C78 /* GitHubSearchService.swift in Sources */,
 				74A938F01EABDDFB00E98C78 /* ProfilePresenter.swift in Sources */,
 				74F007BE1EB241CA00CE4CF6 /* NotFoundStateDataProvider.swift in Sources */,
 				74A938D71EABDDF100E98C78 /* SearchViewController.swift in Sources */,
 				747271401EAE3DB000798E00 /* UnauthorizedStateDataProvider.swift in Sources */,
 				74942BB71EB106760079BAED /* TableViewDataProvider.swift in Sources */,
+				74A939191EB1266F00E98C78 /* SearchQueryRecord.swift in Sources */,
 				74A938A11EABDDC500E98C78 /* AuthenticationPresenterProtocol.swift in Sources */,
-				74624D6E1EAFB07B00E75B72 /* GitHubAuthenticationService.swift in Sources */,
 				74A938F11EABDDFB00E98C78 /* ProfileRouter.swift in Sources */,
 				74A938D61EABDDF100E98C78 /* SearchRouter.swift in Sources */,
 				74624D6C1EAFAB4800E75B72 /* GitHubCredentialsValidator.swift in Sources */,
@@ -994,10 +1023,9 @@
 				74A938A21EABDDC500E98C78 /* AuthenticationRouterProtocol.swift in Sources */,
 				74A938A01EABDDC500E98C78 /* AuthenticationModuleProtocol.swift in Sources */,
 				74A938EC1EABDDFB00E98C78 /* ProfileRouterProtocol.swift in Sources */,
-				7472713E1EAE229400798E00 /* AuthNetworkingServiceProtocol.swift in Sources */,
-				74F007C91EB2505700CE4CF6 /* GitHubSearchService.swift in Sources */,
+				74A939251EB2946900E98C78 /* GitHubAuthenticationService.swift in Sources */,
 				747271201EADE6E000798E00 /* RepositoryTableViewCell.swift in Sources */,
-				74F007CB1EB2506D00CE4CF6 /* GitHubUserProfileService.swift in Sources */,
+				74A939271EB2946900E98C78 /* GitHubUserProfileService.swift in Sources */,
 				747271291EADF33200798E00 /* UserProfileRecord.swift in Sources */,
 				74F007C21EB244C700CE4CF6 /* QueryTableViewCell.swift in Sources */,
 				74A938A61EABDDC500E98C78 /* AuthenticationPresenter.swift in Sources */,
@@ -1221,6 +1249,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		74A939131EB124EB00E98C78 /* SearchHistoryStorage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				74A939141EB124EB00E98C78 /* SearchHistoryStorage.xcdatamodel */,
+			);
+			currentVersion = 74A939141EB124EB00E98C78 /* SearchHistoryStorage.xcdatamodel */;
+			path = SearchHistoryStorage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 74A938451EABDB6E00E98C78 /* Project object */;
 }
