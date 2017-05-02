@@ -17,5 +17,5 @@ protocol SearchNetworkingServiceProtocol {
         Offers method to perform search request to remote server.
         - parameter text: Search query
      */
-    func searchRepositories(withText text: String?) -> Promise<RepositoryRecord>
+    func searchRepositories(withText text: String!) -> Promise<[RepositoryRecord]>
 }

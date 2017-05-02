@@ -44,7 +44,7 @@ extension SearchViewController: SearchViewProtocol {
         tableView.contentProvider = NotFoundStateDataProvider()
     }
     
-    func showSearchHistory(_ list:[String]!) {
+    func showSearchHistory(_ list:[SearchQueryRecord]!) {
         tableView.contentProvider = SearchHistoryDataProvider(queries: list, delegate: self)
     }
     

@@ -44,7 +44,7 @@ class SearchPresenter: SearchPresenterProtocol {
     
     // MARK: - Interactor Layer Feedback -
     
-    func searchHistoryFetched(_ list:[String]!) {
+    func searchHistoryFetched(_ list:[SearchQueryRecord]!) {
         
         if list.count == 0 {
             view?.showEmptyState()

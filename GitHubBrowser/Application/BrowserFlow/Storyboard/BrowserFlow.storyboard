@@ -222,16 +222,30 @@
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                                     </variation>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqX-yf-kh0">
+                                                    <rect key="frame" x="8" y="33" width="23.5" height="13"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.1975671141" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.32549019610000002" green="0.6588235294" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fqX-yf-kh0" secondAttribute="bottom" priority="750" constant="2" id="7ng-u0-IuL"/>
+                                                <constraint firstItem="fqX-yf-kh0" firstAttribute="leading" secondItem="qZg-iS-s2n" secondAttribute="leading" id="80G-Qp-nWI"/>
                                                 <constraint firstItem="qZg-iS-s2n" firstAttribute="top" secondItem="inc-eB-L0b" secondAttribute="top" constant="12" id="BEK-01-cqX"/>
+                                                <constraint firstItem="fqX-yf-kh0" firstAttribute="top" secondItem="qZg-iS-s2n" secondAttribute="bottom" id="WXt-Bm-hfS"/>
                                                 <constraint firstItem="qZg-iS-s2n" firstAttribute="leading" secondItem="inc-eB-L0b" secondAttribute="leading" constant="8" id="YCt-or-lGn"/>
                                                 <constraint firstAttribute="trailing" secondItem="qZg-iS-s2n" secondAttribute="trailing" constant="8" id="gqL-2R-yic"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qZg-iS-s2n" secondAttribute="bottom" priority="750" constant="12" id="w6s-GZ-Zec"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                                                <color key="value" red="0.0" green="0.6705882353" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <outlet property="dateLabel" destination="fqX-yf-kh0" id="oKi-AJ-pRa"/>
                                             <outlet property="queryLabel" destination="qZg-iS-s2n" id="xGC-2r-FEq"/>
                                         </connections>
                                     </tableViewCell>
@@ -320,7 +334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7QD-2f-Pbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-189.59999999999999" y="687.7061469265368"/>
+            <point key="canvasLocation" x="-191.25" y="687.67605633802816"/>
         </scene>
     </scenes>
     <resources>

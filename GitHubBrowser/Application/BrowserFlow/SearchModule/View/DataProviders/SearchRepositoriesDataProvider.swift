@@ -14,4 +14,8 @@ class SearchRepositoriesDataProvider: RepositoriesDataProvider {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Search results:".localized()
     }
+    
+    deinit {
+        NSLog("SearchRepositoriesDataProvider die.")
+    }
 }

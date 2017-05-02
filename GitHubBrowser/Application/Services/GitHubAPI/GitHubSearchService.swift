@@ -10,7 +10,7 @@ import PromiseKit
 
 class GitHubSearchService: SearchNetworkingServiceProtocol {
     
-    func searchRepositories(withText text: String?) -> Promise<RepositoryRecord> {
+    func searchRepositories(withText text: String!) -> Promise<[RepositoryRecord]> {
         return Promise { fulfill, reject in
             
         }

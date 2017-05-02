@@ -10,17 +10,16 @@ import UIKit
 
 class QueryTableViewCell: UITableViewCell {
 
+    @IBInspectable var selectionColor: UIColor?
+    
     @IBOutlet weak var queryLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+
+        self.selectedBackgroundView = UIView()
+        self.selectedBackgroundView?.backgroundColor = selectionColor
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

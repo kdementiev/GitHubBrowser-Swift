@@ -21,11 +21,11 @@ class LocalStorageService {
         
         let container = NSPersistentContainer(name: Storages.SearchHistory)
         
-        container.loadPersistentStores(completionHandler: { (desc: NSPersistentStoreDescription, error: Error?) in
+        container.loadPersistentStores { (desc: NSPersistentStoreDescription, error: Error?) in
             if let error = error as NSError? {
                 NSLog("Error occured: %@", error)
             }
-        })
+        }
         
         return container
     }()
@@ -36,17 +36,66 @@ extension LocalStorageService: LocalStorageServiceProtocol {
     func saveSearchQuery(_ query: String) {
         searchHistoryContainer.performBackgroundTask { (context: NSManagedObjectContext) in
             
-            let fetchRequest = NSFetchRequest<SearchQueryEntity>(entityName: "SearchQueryEntity")
+            // Check for duplicated query.
+            if self.fetchSearchQueryEntity(with: query, with: context) != nil {
+                NSLog("Duplicated query. %@")
+                return;
+            }
             
+            let searchQuery = SearchQueryEntity(context: context)
+            searchQuery.query = query
+            searchQuery.queryDate = Date()
+            
+            do {
+                try context.save()
+            }
+            catch {
+                NSLog("Failed to save context: %@", "\(error)")
+            }
         }
     }
     
     func fetchSearchQueries() -> Promise<[SearchQueryRecord]> {
         return Promise { filfull, reject in
-            searchHistoryContainer.performBackgroundTask({ (context: NSManagedObjectContext) in
+            searchHistoryContainer.performBackgroundTask { (context: NSManagedObjectContext) in
                 
-            })
+                let fetchRequest = SearchQueryEntity.fetchRequest() as! NSFetchRequest<SearchQueryEntity>
+                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "queryDate", ascending: false)]
+            
+                var mapperQueries = [SearchQueryRecord]()
+                
+                do {
+                    // Try to fetch elements from storage.
+                    let queries = try fetchRequest.execute()
+                    
+                    // Map fetched elements.
+                    for (_, entity) in queries.enumerated() {
+                        mapperQueries.append(SearchQueryRecord(query: entity.query, date: entity.queryDate))
+                    }
+                }
+                catch {
+                    NSLog("Failed to fetch enitites: %@", "\(error)")
+                }
+                
+                filfull(mapperQueries)
+            }
         }
+    }
+    
+    private func fetchSearchQueryEntity(with query: String, with context: NSManagedObjectContext) -> SearchQueryEntity? {
+        
+        let fetchRequest = SearchQueryEntity.fetchRequest() as! NSFetchRequest<SearchQueryEntity>
+        fetchRequest.predicate = NSPredicate(format: "query == %@", query)
+        
+        do {
+            let result = try fetchRequest.execute()
+            return result.first
+        }
+        catch {
+            NSLog("Search query fetching failed.")
+        }
+        
+        return nil
     }
     
 }

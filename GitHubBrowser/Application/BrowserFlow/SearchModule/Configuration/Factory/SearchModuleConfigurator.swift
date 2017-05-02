@@ -22,6 +22,7 @@ class SearchModuleConfigurator {
         
         interactor.output = presenter
         interactor.searchNetworking = GitHubSearchService()
+        interactor.historyStorage = LocalStorageService.sharedInstance
   
         presenter.interactor = interactor
         presenter.router = router
