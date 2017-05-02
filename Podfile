@@ -22,6 +22,8 @@ target 'GitHubBrowser' do
   target 'GitHubBrowserTests' do
     inherit! :search_paths
     # Pods for testing
+    
+    pod 'OHHTTPStubs'
   end
 
 end
