@@ -7,14 +7,20 @@
 //
 
 import PromiseKit
+
 import Alamofire
+import AlamofireObjectMapper
+
 
 class GitHubAuthenticationService: AuthNetworkingServiceProtocol {
 
     func login(withCredentials credentials: AuthCredentials) -> Promise<String> {
         return Promise { fulfill, reject in
             
+            
+            
             reject(AuthenticationServiceError.BadCredentials)
         }
+        
     }
 }

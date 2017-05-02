@@ -19,7 +19,7 @@ protocol TokenStorageServiceProtocol: class {
         Offers method to save token securely.
         - parameter token: Auth2 token.
     */
-    func saveTokenToSecureStorage(_ token: String!)
+    func saveTokenToSecureStorage(_ token: String)
     
     /**
         Offers ability to remove token from storage.

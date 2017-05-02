@@ -25,7 +25,7 @@ class SecureStorageService: TokenStorageServiceProtocol {
         keychain.synchronizable = true
     }
     
-    func saveTokenToSecureStorage(_ token: String!) {
+    func saveTokenToSecureStorage(_ token: String) {
         keychain.set(token, forKey: Keychain.tokenAccessKey, withAccess:.accessibleAlways)
     }
     

@@ -6,7 +6,6 @@
 //  Copyright © 2017 Konstantin Dementiev. All rights reserved.
 //
 
-import Foundation
 import PromiseKit
 
 /**

@@ -12,6 +12,6 @@ extension UITextField {
     
     func showError(_ show: Bool) {
         self.layer.borderColor = show ? UIColor.red.cgColor : UIColor.clear.cgColor
-        self.layer.borderWidth = 1.0
+        self.layer.borderWidth = 1
     }
 }

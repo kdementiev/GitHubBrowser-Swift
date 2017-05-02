@@ -10,14 +10,13 @@ import PromiseKit
 
 struct AuthCredentials {
     
-    var username: String?
-    var password: String?
+    var username: String
+    var password: String
     
     var code: String?
 }
 
 enum AuthenticationServiceError: Error {
-    case None
     case BadCredentials
     case OTPRequired
 }

@@ -34,8 +34,8 @@ class AuthenticationInteractor: AuthenticationInteractorProtocol {
             return
         }
         
-        // Create local credentials.
-        self.authCredentials = AuthCredentials(username: username, password: password, code: nil)
+        // Create local credentials. If credentials validated, map it to objects.
+        self.authCredentials = AuthCredentials(username: username!, password: password!, code: nil)
         
         // Try to login with user provided data.
         self.login(credentials: authCredentials)

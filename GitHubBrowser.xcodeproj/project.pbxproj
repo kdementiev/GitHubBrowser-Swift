@@ -75,6 +75,11 @@
 		74A939251EB2946900E98C78 /* GitHubAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9391F1EB2946900E98C78 /* GitHubAuthenticationService.swift */; };
 		74A939261EB2946900E98C78 /* GitHubSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A939201EB2946900E98C78 /* GitHubSearchService.swift */; };
 		74A939271EB2946900E98C78 /* GitHubUserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A939211EB2946900E98C78 /* GitHubUserProfileService.swift */; };
+		74A939291EB5130A00E98C78 /* GitHubNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A939281EB5130A00E98C78 /* GitHubNetworking.swift */; };
+		74A9392C1EB5187500E98C78 /* GHAuthEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9392B1EB5187500E98C78 /* GHAuthEntity.swift */; };
+		74A9392E1EB5199800E98C78 /* GHRepositoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9392D1EB5199800E98C78 /* GHRepositoryEntity.swift */; };
+		74A939301EB519F700E98C78 /* GHUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9392F1EB519F700E98C78 /* GHUserEntity.swift */; };
+		74A939321EB520FC00E98C78 /* GHPageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A939311EB520FC00E98C78 /* GHPageEntity.swift */; };
 		74F007BC1EB2410000CE4CF6 /* SearchRepositoriesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F007BB1EB2410000CE4CF6 /* SearchRepositoriesDataProvider.swift */; };
 		74F007BE1EB241CA00CE4CF6 /* NotFoundStateDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F007BD1EB241CA00CE4CF6 /* NotFoundStateDataProvider.swift */; };
 		74F007C01EB2430D00CE4CF6 /* SearchHistoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F007BF1EB2430D00CE4CF6 /* SearchHistoryDataProvider.swift */; };
@@ -171,6 +176,11 @@
 		74A9391F1EB2946900E98C78 /* GitHubAuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAuthenticationService.swift; sourceTree = "<group>"; };
 		74A939201EB2946900E98C78 /* GitHubSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubSearchService.swift; sourceTree = "<group>"; };
 		74A939211EB2946900E98C78 /* GitHubUserProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubUserProfileService.swift; sourceTree = "<group>"; };
+		74A939281EB5130A00E98C78 /* GitHubNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubNetworking.swift; sourceTree = "<group>"; };
+		74A9392B1EB5187500E98C78 /* GHAuthEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHAuthEntity.swift; sourceTree = "<group>"; };
+		74A9392D1EB5199800E98C78 /* GHRepositoryEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHRepositoryEntity.swift; sourceTree = "<group>"; };
+		74A9392F1EB519F700E98C78 /* GHUserEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHUserEntity.swift; sourceTree = "<group>"; };
+		74A939311EB520FC00E98C78 /* GHPageEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHPageEntity.swift; sourceTree = "<group>"; };
 		74F007BB1EB2410000CE4CF6 /* SearchRepositoriesDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRepositoriesDataProvider.swift; sourceTree = "<group>"; };
 		74F007BD1EB241CA00CE4CF6 /* NotFoundStateDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotFoundStateDataProvider.swift; sourceTree = "<group>"; };
 		74F007BF1EB2430D00CE4CF6 /* SearchHistoryDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryDataProvider.swift; sourceTree = "<group>"; };
@@ -729,10 +739,12 @@
 		74A9391A1EB2946900E98C78 /* GitHubAPI */ = {
 			isa = PBXGroup;
 			children = (
+				74A9392A1EB5139100E98C78 /* Entities */,
 				74A9391B1EB2946900E98C78 /* Contract */,
 				74A9391F1EB2946900E98C78 /* GitHubAuthenticationService.swift */,
 				74A939201EB2946900E98C78 /* GitHubSearchService.swift */,
 				74A939211EB2946900E98C78 /* GitHubUserProfileService.swift */,
+				74A939281EB5130A00E98C78 /* GitHubNetworking.swift */,
 			);
 			path = GitHubAPI;
 			sourceTree = "<group>";
@@ -745,6 +757,17 @@
 				74A9391E1EB2946900E98C78 /* SearchNetworkingServiceProtocol.swift */,
 			);
 			path = Contract;
+			sourceTree = "<group>";
+		};
+		74A9392A1EB5139100E98C78 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				74A9392B1EB5187500E98C78 /* GHAuthEntity.swift */,
+				74A9392D1EB5199800E98C78 /* GHRepositoryEntity.swift */,
+				74A9392F1EB519F700E98C78 /* GHUserEntity.swift */,
+				74A939311EB520FC00E98C78 /* GHPageEntity.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		D1AC327354F024BA22BD1B03 /* Frameworks */ = {
@@ -989,8 +1012,11 @@
 				74942BAD1EB0EE270079BAED /* UIAlertController+AuthenticationAlerts.swift in Sources */,
 				74A938E91EABDDFB00E98C78 /* ProfileInteractorProtocol.swift in Sources */,
 				74A9390F1EB1238600E98C78 /* LocalStorageServiceProtocol.swift in Sources */,
+				74A9392C1EB5187500E98C78 /* GHAuthEntity.swift in Sources */,
+				74A939321EB520FC00E98C78 /* GHPageEntity.swift in Sources */,
 				74A938D11EABDDF100E98C78 /* SearchRouterProtocol.swift in Sources */,
 				74A938D31EABDDF100E98C78 /* SearchModuleConfigurator.swift in Sources */,
+				74A939291EB5130A00E98C78 /* GitHubNetworking.swift in Sources */,
 				74A938ED1EABDDFB00E98C78 /* ProfileViewProtocol.swift in Sources */,
 				747271491EAE4CCE00798E00 /* NoContentStateDataProvider.swift in Sources */,
 				74F007C71EB247F700CE4CF6 /* ActivityStateDataProvider.swift in Sources */,
@@ -998,6 +1024,7 @@
 				74A938A51EABDDC500E98C78 /* AuthenticationInteractor.swift in Sources */,
 				74A938EE1EABDDFB00E98C78 /* ProfileModuleConfigurator.swift in Sources */,
 				7472712B1EADF39400798E00 /* RepositoryRecord.swift in Sources */,
+				74A9392E1EB5199800E98C78 /* GHRepositoryEntity.swift in Sources */,
 				74A938EA1EABDDFB00E98C78 /* ProfileModuleProtocol.swift in Sources */,
 				74F007C01EB2430D00CE4CF6 /* SearchHistoryDataProvider.swift in Sources */,
 				74A938D41EABDDF100E98C78 /* SearchInteractor.swift in Sources */,
@@ -1023,6 +1050,7 @@
 				74A938A21EABDDC500E98C78 /* AuthenticationRouterProtocol.swift in Sources */,
 				74A938A01EABDDC500E98C78 /* AuthenticationModuleProtocol.swift in Sources */,
 				74A938EC1EABDDFB00E98C78 /* ProfileRouterProtocol.swift in Sources */,
+				74A939301EB519F700E98C78 /* GHUserEntity.swift in Sources */,
 				74A939251EB2946900E98C78 /* GitHubAuthenticationService.swift in Sources */,
 				747271201EADE6E000798E00 /* RepositoryTableViewCell.swift in Sources */,
 				74A939271EB2946900E98C78 /* GitHubUserProfileService.swift in Sources */,
