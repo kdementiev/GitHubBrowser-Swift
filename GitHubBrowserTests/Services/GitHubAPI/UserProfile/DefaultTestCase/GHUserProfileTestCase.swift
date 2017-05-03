@@ -10,7 +10,7 @@ import XCTest
 
 @testable import GitHubBrowser
 
-class GHUserProfileTestCase: XCTestCase {
+class GHUserProfileTestCase: GHTestCase {
     
     let profileService = GitHubUserProfileService()
     
