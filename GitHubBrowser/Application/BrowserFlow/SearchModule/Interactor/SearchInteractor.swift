@@ -31,7 +31,7 @@ class SearchInteractor: SearchInteractorProtocol {
     func searchRepositories(text: String!) {
         
         firstly {
-            searchNetworking.searchRepositories(withText: text)
+            searchNetworking.searchRepositories(withText: text, cancelltaionToken: nil)
         }.then { repositories -> Void in
             self.output?.searchResultsReceived(repositories)
         }.catch { _ in

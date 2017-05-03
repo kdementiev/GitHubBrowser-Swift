@@ -1,0 +1,19 @@
+{
+    "id": 96356055,
+    "url": "https://api.github.com/authorizations/96356055",
+    "app": {
+        "name": "GitHubBrowser",
+        "url": "http://localhost:4567",
+        "client_id": "617e1724f77a4383413c"
+    },
+    "token": "52fe1f630a4474517c75ead56eaa",
+    "hashed_token": "52fe1f630a4474517c75ead56eaa050bcdf23086e222a5d244340d2fa55985b7",
+    "token_last_eight": "1d610fdb",
+    "note": "GitHubBrowser iOS app",
+    "note_url": null,
+    "created_at": "2017-04-17T18:55:10Z",
+    "updated_at": "2017-04-17T18:55:10Z",
+    "scopes": [
+    ],
+    "fingerprint": null
+}

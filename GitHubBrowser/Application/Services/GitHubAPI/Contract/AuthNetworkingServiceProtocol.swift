@@ -7,6 +7,7 @@
 //
 
 import PromiseKit
+import CancellationToken
 
 struct AuthCredentials {
     
@@ -29,7 +30,8 @@ protocol AuthNetworkingServiceProtocol {
     /**
      Offers simplified way to authenticate user.
      - parameter credentials: AuthCredentials instance.
+     - parameter cancelltaionToken: Token helps client with async task cancellation.
      - returns: A promise that offers toy handle auth flow events.
      */
-    func login(withCredentials credentials: AuthCredentials) -> Promise<String>
+    func login(withCredentials credentials: AuthCredentials, cancelltaionToken: CancellationToken?) -> Promise<String>
 }

@@ -8,6 +8,7 @@ target 'GitHubBrowser' do
   # Pods for GitHubBrowser
   
   pod 'PromiseKit'
+  pod 'CancellationToken'
   
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
@@ -23,7 +24,7 @@ target 'GitHubBrowser' do
     inherit! :search_paths
     # Pods for testing
     
-    pod 'OHHTTPStubs'
+    pod 'OHHTTPStubs/Swift'
   end
 
 end

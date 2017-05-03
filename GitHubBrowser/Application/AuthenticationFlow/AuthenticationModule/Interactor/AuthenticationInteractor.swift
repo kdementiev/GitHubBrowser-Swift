@@ -7,6 +7,7 @@
 //
 
 import PromiseKit
+import CancellationToken
 
 class AuthenticationInteractor: AuthenticationInteractorProtocol {
     
@@ -16,6 +17,9 @@ class AuthenticationInteractor: AuthenticationInteractorProtocol {
     var authService: AuthNetworkingServiceProtocol?
     var tokenStorage: TokenStorageServiceProtocol?
     var credentialsValidator: CredentialsValidatorProtocol?
+    
+    // Canncelation tokens provider.
+    private var cancellationTokenSource: CancellationTokenSource?
     
     private var authCredentials: AuthCredentials!
     
@@ -60,7 +64,10 @@ class AuthenticationInteractor: AuthenticationInteractorProtocol {
     
     private func login(credentials: AuthCredentials) {
         
-        authService?.login(withCredentials: credentials).then { token -> Void in
+        cancellationTokenSource?.cancel()
+        cancellationTokenSource = CancellationTokenSource()
+        
+        authService?.login(withCredentials: credentials, cancelltaionToken: cancellationTokenSource?.token).then { token -> Void in
             
             self.tokenStorage?.saveTokenToSecureStorage(token)
             self.output?.authenticationSuccessfullyPassed()

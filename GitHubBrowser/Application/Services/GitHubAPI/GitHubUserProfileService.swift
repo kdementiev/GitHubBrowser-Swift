@@ -7,6 +7,7 @@
 //
 
 import PromiseKit
+import CancellationToken
 
 class GitHubUserProfileService: ProfileNetworkingServiceProtocol {
     
@@ -14,14 +15,26 @@ class GitHubUserProfileService: ProfileNetworkingServiceProtocol {
         
     }
     
-    func fetchUserProfile() -> Promise<UserProfileRecord> {
+    func fetchUserProfile(cancelltaionToken: CancellationToken?) -> Promise<UserProfileRecord> {
         return Promise { fulfill, reject in
+            
+            // Perform task cancelation.
+            cancelltaionToken?.register {
+                reject(NSError.cancelledError())
+            }
+            
             reject( NSError(domain: "", code: 1, userInfo: nil) )
         }
     }
     
-    func fetchUserRepositories() -> Promise<[RepositoryRecord]> {
+    func fetchUserRepositories(cancelltaionToken: CancellationToken?) -> Promise<[RepositoryRecord]> {
         return Promise { fulfill, reject in
+            
+            // Perform task cancelation.
+            cancelltaionToken?.register {
+                reject(NSError.cancelledError())
+            }
+            
             reject( NSError(domain: "", code: 1, userInfo: nil) )
         }
     }

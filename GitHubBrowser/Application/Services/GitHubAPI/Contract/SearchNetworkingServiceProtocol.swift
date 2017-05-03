@@ -7,6 +7,7 @@
 //
 
 import PromiseKit
+import CancellationToken
 
 /**
     Offers interface to perform search for a specific items via remote server.
@@ -15,7 +16,8 @@ protocol SearchNetworkingServiceProtocol {
     
     /**
         Offers method to perform search request to remote server.
+        - parameter cancelltaionToken: Token helps client with async task cancellation.
         - parameter text: Search query
      */
-    func searchRepositories(withText text: String!) -> Promise<[RepositoryRecord]>
+    func searchRepositories(withText text: String!, cancelltaionToken: CancellationToken?) -> Promise<[RepositoryRecord]>
 }

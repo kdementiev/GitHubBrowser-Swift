@@ -14,9 +14,7 @@ class LocalStorageService {
     private struct Storages {
         static let SearchHistory = "SearchHistoryStorage"
     }
-    
-    static let sharedInstance: LocalStorageService = LocalStorageService()
-    
+        
     fileprivate lazy var searchHistoryContainer: NSPersistentContainer = {
         
         let container = NSPersistentContainer(name: Storages.SearchHistory)
@@ -98,4 +96,23 @@ extension LocalStorageService: LocalStorageServiceProtocol {
         return nil
     }
     
+    func removeQuery(_ query: String) {
+        
+        searchHistoryContainer.performBackgroundTask { (context: NSManagedObjectContext) in
+            
+            guard let queryEntity = self.fetchSearchQueryEntity(with: query, with: context) else {
+                NSLog("No query found for query: %@", query)
+                return
+            }
+            
+            context.delete(queryEntity)
+            
+            do {
+                try context.save()
+            }
+            catch {
+                NSLog("Failed to save context: %@", "\(error)")
+            }
+        }
+    }
 }

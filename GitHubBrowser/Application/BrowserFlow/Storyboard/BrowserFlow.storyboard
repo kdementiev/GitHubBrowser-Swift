@@ -134,7 +134,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="InfoMessageTableViewCell" rowHeight="40" id="w36-fu-FKV" customClass="InfoMessageTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoContentTableViewCell" rowHeight="40" id="w36-fu-FKV" customClass="NoContentTableViewCell" customModule="GitHubBrowser" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="304" width="320" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w36-fu-FKV" id="PGJ-n0-qWP">

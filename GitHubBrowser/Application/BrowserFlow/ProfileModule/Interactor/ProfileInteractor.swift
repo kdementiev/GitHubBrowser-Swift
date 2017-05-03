@@ -76,13 +76,13 @@ extension ProfileInteractor: ProfileInteractorProtocol {
         
         // Start 2 async promises
         
-        profileNetworking?.fetchUserRepositories().then { repositiries -> Void in
+        profileNetworking?.fetchUserRepositories(cancelltaionToken: nil).then { repositiries -> Void in
             self.output?.userRepositoriesReceived(repositiries)
         }.catch { error in
             self.unauthorizeUser()
         }
         
-        profileNetworking?.fetchUserProfile().then { profile -> Void in
+        profileNetworking?.fetchUserProfile(cancelltaionToken: nil).then { profile -> Void in
             self.output?.userProfileReveived(profile)
         }.catch { error in
             self.unauthorizeUser()

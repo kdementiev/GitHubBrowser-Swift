@@ -7,6 +7,7 @@
 //
 
 import PromiseKit
+import CancellationToken
 
 /**
     Offers abstract interface to fetch user profile data from remote server.
@@ -21,13 +22,15 @@ protocol ProfileNetworkingServiceProtocol {
     
     /**
         Offers method to get user profile from remote server.
+        - parameter cancelltaionToken: Token helps client with async task cancellation.
         - returns: User profile promise.
      */
-    func fetchUserProfile() -> Promise<UserProfileRecord>
+    func fetchUserProfile(cancelltaionToken: CancellationToken?) -> Promise<UserProfileRecord>
     
     /**
         Offers method to get user repositories from remote server.
+        - parameter cancelltaionToken: Token helps client with async task cancellation.
         - returns: User repositories list promise.
      */
-    func fetchUserRepositories() -> Promise<[RepositoryRecord]>
+    func fetchUserRepositories(cancelltaionToken: CancellationToken?) -> Promise<[RepositoryRecord]>
 }

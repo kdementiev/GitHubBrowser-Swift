@@ -19,4 +19,8 @@ protocol LocalStorageServiceProtocol: class {
     /**
     */
     func fetchSearchQueries() -> Promise<[SearchQueryRecord]>
+    
+    /**
+    */
+    func removeQuery(_ query: String)
 }

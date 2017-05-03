@@ -7,6 +7,7 @@
 //
 
 import PromiseKit
+import CancellationToken
 
 import Alamofire
 import AlamofireObjectMapper
@@ -14,10 +15,15 @@ import AlamofireObjectMapper
 
 class GitHubAuthenticationService: AuthNetworkingServiceProtocol {
 
-    func login(withCredentials credentials: AuthCredentials) -> Promise<String> {
+    func login(withCredentials credentials: AuthCredentials, cancelltaionToken: CancellationToken?) -> Promise<String> {
         return Promise { fulfill, reject in
             
+            // Perform task cancelation.
+            cancelltaionToken?.register {
+                reject(NSError.cancelledError())
+            }
             
+            // TODO: Perform async job.
             
             reject(AuthenticationServiceError.BadCredentials)
         }

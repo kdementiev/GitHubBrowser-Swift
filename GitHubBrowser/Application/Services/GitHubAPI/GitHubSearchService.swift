@@ -7,11 +7,17 @@
 //
 
 import PromiseKit
+import CancellationToken
 
 class GitHubSearchService: SearchNetworkingServiceProtocol {
     
-    func searchRepositories(withText text: String!) -> Promise<[RepositoryRecord]> {
+    func searchRepositories(withText text: String!, cancelltaionToken: CancellationToken?) -> Promise<[RepositoryRecord]> {
+
         return Promise { fulfill, reject in
+            // Perform task cancelation.
+            cancelltaionToken?.register {
+                reject(NSError.cancelledError())
+            }
             
         }
     }
