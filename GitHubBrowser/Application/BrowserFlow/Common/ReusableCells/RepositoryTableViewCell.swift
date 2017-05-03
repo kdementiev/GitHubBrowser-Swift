@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UIColorInterpolation
 
 class RepositoryTableViewCell: UITableViewCell {
 
@@ -16,14 +17,17 @@ class RepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var starsLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+
+    @IBInspectable var topColor: UIColor?
+    @IBInspectable var bottomColor: UIColor?
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        UIView .animate(withDuration: 1) { 
+        UIView.animate(withDuration: 1) {
             self.alpha = highlighted ? 0.5 : 1.0
         }
     }
     
     func setColorPosition(_ position: CGFloat) {
-        
+        self.contentView.backgroundColor = topColor?.interpolating(with: bottomColor, factor: position)
     }
 }

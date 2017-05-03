@@ -12,10 +12,12 @@ target 'GitHubBrowser' do
   
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
+  pod 'AlamofireNetworkActivityLogger'
 
   pod 'KeychainSwift'
   pod 'Localize-Swift'
   
+  pod 'UIColorInterpolation'
   pod 'SDWebImage'
   
   pod 'PrettySegue'

@@ -13,7 +13,7 @@ import CancellationToken
 
 class GitHubAPIAuthenticationTests: GHTestCase {
     
-    let authRoute = "authorizations/clients/"
+    let authRoute = "/authorizations/clients/"
     let authService = GitHubAuthenticationService()
     let credentials = AuthCredentials(username: "test", password: "test", code: "1234")
     
@@ -95,8 +95,8 @@ class GitHubAPIAuthenticationTests: GHTestCase {
         }.then { token -> Void in
             XCTFail("No token must be provided.")
         }.catch { error in
-
-            XCTAssertTrue(error.isCancelledError, "Invalid error.")
+            XCTFail("No error must be provided.")
+        }.always {
             expectation.fulfill()
         }
         

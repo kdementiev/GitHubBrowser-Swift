@@ -13,7 +13,7 @@ import CancellationToken
 
 class GitHubAPIUserProfileRepositoriesTests: GHUserProfileTestCase {
     
-    let repositoriesRoute = "user/repos"
+    let repositoriesRoute = "/user/repos"
     
     override func setUp() {
         super.setUp()
@@ -39,7 +39,7 @@ class GitHubAPIUserProfileRepositoriesTests: GHUserProfileTestCase {
             XCTAssertEqual(repository.name, "GitHubBrowser", "Invalid repo name.")
             XCTAssertEqual(repository.language, "Objective-C", "Invalid repo language.")
             XCTAssertEqual(repository.starsCount, 0, "Invalid stars count.")
-            XCTAssertNil(repository.desc, "Invalid repo description.")
+            XCTAssertNil(repository.description, "Invalid repo description.")
             
             expectation.fulfill()
         }.catch { (error) in
@@ -76,10 +76,9 @@ class GitHubAPIUserProfileRepositoriesTests: GHUserProfileTestCase {
             profileService.fetchUserRepositories(cancelltaionToken: tokenSource.token)
         }.then { (repositories: [RepositoryRecord]) -> Void in
             XCTFail("No response must be provided.")
-        }.catch { (error) in
-            
-            XCTAssertTrue(error.isCancelledError, "Invalid error type.")
-            
+        }.catch { error in
+            XCTFail("No error must be provided.")
+        }.always {
             expectation.fulfill()
         }
         

@@ -14,7 +14,7 @@ import CancellationToken
 class GitHubAPISearchTests: GHTestCase {
     
     let searchService = GitHubSearchService()
-    let searchRoute = "search/repositories"
+    let searchRoute = "/search/repositories?q=test"
     let searchQuery = "GitHubBrowser"
     
     override func setUp() {
@@ -32,7 +32,7 @@ class GitHubAPISearchTests: GHTestCase {
         let expectation = self.expectation(description: "Waiting for response.")
         
         firstly {
-            searchService.searchRepositories(withText: "", cancelltaionToken: nil)
+            searchService.searchRepositories(withText: "test", cancelltaionToken: nil)
         }.then { (repositories: [RepositoryRecord]) -> Void in
             
             XCTAssertEqual(repositories.count, 2, "Invalid repositories count")
@@ -107,7 +107,8 @@ class GitHubAPISearchTests: GHTestCase {
         }.then { (repositories: [RepositoryRecord]) -> Void in
             XCTFail("No response must be provided.")
         }.catch { error in
-            XCTAssertTrue(error.isCancelledError, "Invalid error response.")
+            XCTFail("No error must be provided.")
+        }.always {
             expectation.fulfill()
         }
         

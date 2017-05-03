@@ -21,7 +21,7 @@ class GitHubAPIUserProfileFetchingTests: GHUserProfileTestCase {
 
         profileService.prepare(withToken: token)
         
-        profileRoute = "user/access_token=\(token)"
+        profileRoute = "/user/access_token=\(token)"
     }
     
     override func tearDown() {
@@ -89,7 +89,8 @@ class GitHubAPIUserProfileFetchingTests: GHUserProfileTestCase {
         profileService.fetchUserProfile(cancelltaionToken: tokenSoure.token).then { (profile) -> Void in
             XCTFail("No result must be provided.")
         }.catch { error in
-            XCTAssertTrue(error.isCancelledError, "Invalid error type.")
+            XCTFail("No error must be provided.")
+        }.always {
             expectation.fulfill()
         }
         

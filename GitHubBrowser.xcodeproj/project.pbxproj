@@ -77,7 +77,6 @@
 		74A938F11EABDDFB00E98C78 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A938E61EABDDFB00E98C78 /* ProfileRouter.swift */; };
 		74A938F21EABDDFB00E98C78 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A938E81EABDDFB00E98C78 /* ProfileViewController.swift */; };
 		74A938F41EABDE5200E98C78 /* AuthenticationFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A938F31EABDE5200E98C78 /* AuthenticationFlow.storyboard */; };
-		74A938FA1EABDEB700E98C78 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74A938F91EABDEB700E98C78 /* RepositoryTableViewCell.xib */; };
 		74A938FC1EABDEBE00E98C78 /* BrowserFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A938FB1EABDEBE00E98C78 /* BrowserFlow.storyboard */; };
 		74A939001EABE4F600E98C78 /* UITableViewCell+Usability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A938FF1EABE4F600E98C78 /* UITableViewCell+Usability.swift */; };
 		74A9390F1EB1238600E98C78 /* LocalStorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9390E1EB1238600E98C78 /* LocalStorageServiceProtocol.swift */; };
@@ -96,6 +95,7 @@
 		74A9392E1EB5199800E98C78 /* GHRepositoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9392D1EB5199800E98C78 /* GHRepositoryEntity.swift */; };
 		74A939301EB519F700E98C78 /* GHUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9392F1EB519F700E98C78 /* GHUserEntity.swift */; };
 		74A939321EB520FC00E98C78 /* GHPageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A939311EB520FC00E98C78 /* GHPageEntity.swift */; };
+		74DCAC431EBA409100459AAE /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74A938F91EABDEB700E98C78 /* RepositoryTableViewCell.xib */; };
 		74F007BC1EB2410000CE4CF6 /* SearchRepositoriesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F007BB1EB2410000CE4CF6 /* SearchRepositoriesDataProvider.swift */; };
 		74F007BE1EB241CA00CE4CF6 /* NotFoundStateDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F007BD1EB241CA00CE4CF6 /* NotFoundStateDataProvider.swift */; };
 		74F007C01EB2430D00CE4CF6 /* SearchHistoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F007BF1EB2430D00CE4CF6 /* SearchHistoryDataProvider.swift */; };
@@ -1015,7 +1015,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74A938FA1EABDEB700E98C78 /* RepositoryTableViewCell.xib in Resources */,
+				74DCAC431EBA409100459AAE /* RepositoryTableViewCell.xib in Resources */,
 				74A938F41EABDE5200E98C78 /* AuthenticationFlow.storyboard in Resources */,
 				74A938781EABDC1200E98C78 /* Assets.xcassets in Resources */,
 				74A938FC1EABDEBE00E98C78 /* BrowserFlow.storyboard in Resources */,

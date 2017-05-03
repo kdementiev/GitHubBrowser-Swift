@@ -28,7 +28,7 @@ struct GHRepositoryEntity: Mappable {
         description <- map["description"]
         
         language <- map["language"]
-        starsCount <- map["starsCount"]
+        starsCount <- map["stargazers_count"]
         
         owner <- map["owner"]
     }

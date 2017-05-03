@@ -35,7 +35,7 @@ class GHTestCase: XCTestCase {
             requiredHeaders.addEntries(from: headers!)
         }
         
-        stub(condition: isPath(route), response: { (request: URLRequest) -> OHHTTPStubsResponse in
+        stub(condition:isPath(route), response: { (request: URLRequest) -> OHHTTPStubsResponse in
             return OHHTTPStubsResponse(fileAtPath: OHPathForFile(name, GHTestCase.self)!, statusCode: code, headers: requiredHeaders as? [AnyHashable : Any])
         })
     }

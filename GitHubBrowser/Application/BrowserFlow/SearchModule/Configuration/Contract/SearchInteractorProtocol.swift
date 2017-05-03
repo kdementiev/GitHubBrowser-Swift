@@ -12,7 +12,6 @@ protocol SearchInteractorOutput: class {
 
     func searchHistoryFetched(_ list:[SearchQueryRecord]!)
     func searchResultsReceived(_ repositories:[RepositoryRecord]!)
-    
 }
 
 protocol SearchInteractorProtocol: class {

@@ -12,7 +12,8 @@ extension UITableViewCell {
     
     class func registerCell(tableView: UITableView) {
         let className = String(describing: self)
-        tableView.register(self.classForCoder(), forCellReuseIdentifier: className)
+        let cellNib = UINib(nibName: className, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: className)
     }
     
     class func reusableCell(tableView: UITableView) -> Self? {

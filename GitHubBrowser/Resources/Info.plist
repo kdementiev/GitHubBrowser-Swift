@@ -20,6 +20,13 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>GitHubCredentials</key>
+	<dict>
+		<key>Client</key>
+		<string>617e1724f77a4383413c</string>
+		<key>Secret</key>
+		<string>f76e953e914d49216dc4a26372033b3ab405d74e</string>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

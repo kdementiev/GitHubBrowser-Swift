@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RepositoryTableViewCell" rowHeight="82" id="DTH-mK-SZI" customClass="RepositoryTableViewCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RepositoryTableViewCell" rowHeight="82" id="DTH-mK-SZI" customClass="RepositoryTableViewCell" customModule="GitHubBrowser" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DTH-mK-SZI" id="A8b-iD-hBA" customClass="RepositoryTableViewCell" customModule="GitHubBrowser" customModuleProvider="target">
@@ -107,11 +107,10 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="authorLabel" destination="dPN-xc-Dgn" id="O3Q-25-W7o"/>
-                <outlet property="authorLable" destination="dPN-xc-Dgn" id="Nuc-TO-x7W"/>
-                <outlet property="descriptionLabel" destination="y3Y-Hb-owd" id="dc6-aS-ti8"/>
+                <outlet property="descriptionLabel" destination="y3Y-Hb-owd" id="9F5-P0-a0R"/>
                 <outlet property="languageLabel" destination="L2Z-lX-Acg" id="wjb-iz-BNo"/>
                 <outlet property="starsLabel" destination="0VP-8I-DUe" id="wXg-3G-g4Y"/>
-                <outlet property="titleLabel" destination="gtQ-EV-GnY" id="6UR-Hh-QaU"/>
+                <outlet property="titleLabel" destination="gtQ-EV-GnY" id="Ati-gV-po4"/>
             </connections>
         </tableViewCell>
     </objects>

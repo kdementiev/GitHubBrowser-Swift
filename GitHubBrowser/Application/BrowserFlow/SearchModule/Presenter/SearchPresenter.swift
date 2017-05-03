@@ -48,6 +48,7 @@ class SearchPresenter: SearchPresenterProtocol {
         
         if list.count == 0 {
             view?.showEmptyState()
+            return
         }
         
         view?.showSearchHistory(list)
@@ -57,6 +58,7 @@ class SearchPresenter: SearchPresenterProtocol {
         
         if repositories.count == 0 {
             view?.showNotFoundState()
+            return
         }
         
         view?.showSearchResults(repositories)

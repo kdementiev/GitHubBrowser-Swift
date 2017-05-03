@@ -28,7 +28,7 @@ extension RepositoriesDataProvider: TableViewDataProvider {
     func prepare(tableView: UITableView!) {
         // We need to register our cell.
         RepositoryTableViewCell.registerCell(tableView: tableView)
-        
+
         // Prepare auto-sized cells.
         tableView.estimatedRowHeight = CellEstimatedHeight
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -42,9 +42,19 @@ extension RepositoriesDataProvider: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let repository = self.repositories?[indexPath.row]
         let cell = RepositoryTableViewCell.reusableCell(tableView: tableView)
         
         // TODO: Perform cell setting-up.
+        cell?.setColorPosition( CGFloat(indexPath.row + 1) / CGFloat(repositories?.count ?? 0))
+        
+        cell?.titleLabel.text = repository?.name
+        cell?.descriptionLabel.text = repository?.description ?? "No description.".localized()
+        cell?.languageLabel.text = repository?.language
+        cell?.authorLabel.text = repository?.ownerName
+        
+        cell?.starsLabel.text = "\(repository?.starsCount ?? 0)"
         
         return cell!;
     }
