@@ -23,9 +23,8 @@ class GitHubAuthenticationService: AuthNetworkingServiceProtocol {
                 reject(NSError.cancelledError())
             }
             
-            // TODO: Perform async job.
-            
-            reject(AuthenticationServiceError.BadCredentials)
+//            // TODO: Perform async job.
+//            reject(AuthenticationServiceError.BadCredentials)
         }
         
     }
