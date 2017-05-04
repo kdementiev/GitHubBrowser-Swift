@@ -43,6 +43,10 @@
 		74942BAF1EB0F3CC0079BAED /* UITextField+ErrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74942BAE1EB0F3CC0079BAED /* UITextField+ErrorState.swift */; };
 		74942BB71EB106760079BAED /* TableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74942BB51EB106760079BAED /* TableViewDataProvider.swift */; };
 		74942BB81EB106760079BAED /* UITableView+DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74942BB61EB106760079BAED /* UITableView+DataProvider.swift */; };
+		74A911001EBB257900BF32EA /* SearchInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A910FF1EBB257900BF32EA /* SearchInteractorTests.swift */; };
+		74A911031EBB271A00BF32EA /* MockSearchNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A911021EBB271A00BF32EA /* MockSearchNetworkingService.swift */; };
+		74A911051EBB278200BF32EA /* MockLocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A911041EBB278200BF32EA /* MockLocalStorageService.swift */; };
+		74A911071EBB284300BF32EA /* MockSearchInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A911061EBB284300BF32EA /* MockSearchInteractorOutput.swift */; };
 		74A938771EABDC1200E98C78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A938711EABDC1200E98C78 /* AppDelegate.swift */; };
 		74A938781EABDC1200E98C78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A938731EABDC1200E98C78 /* Assets.xcassets */; };
 		74A938791EABDC1200E98C78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A938741EABDC1200E98C78 /* LaunchScreen.storyboard */; };
@@ -156,6 +160,10 @@
 		74942BAE1EB0F3CC0079BAED /* UITextField+ErrorState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+ErrorState.swift"; sourceTree = "<group>"; };
 		74942BB51EB106760079BAED /* TableViewDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataProvider.swift; sourceTree = "<group>"; };
 		74942BB61EB106760079BAED /* UITableView+DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+DataProvider.swift"; sourceTree = "<group>"; };
+		74A910FF1EBB257900BF32EA /* SearchInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchInteractorTests.swift; sourceTree = "<group>"; };
+		74A911021EBB271A00BF32EA /* MockSearchNetworkingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSearchNetworkingService.swift; sourceTree = "<group>"; };
+		74A911041EBB278200BF32EA /* MockLocalStorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLocalStorageService.swift; sourceTree = "<group>"; };
+		74A911061EBB284300BF32EA /* MockSearchInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSearchInteractorOutput.swift; sourceTree = "<group>"; };
 		74A9384D1EABDB6E00E98C78 /* GitHubBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A938611EABDB6E00E98C78 /* GitHubBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A938671EABDB6E00E98C78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -482,6 +490,33 @@
 			path = UITableViewDataProvider;
 			sourceTree = "<group>";
 		};
+		74A910FD1EBB254C00BF32EA /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				74A910FE1EBB255900BF32EA /* SearchModule */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		74A910FE1EBB255900BF32EA /* SearchModule */ = {
+			isa = PBXGroup;
+			children = (
+				74A911011EBB26EA00BF32EA /* Mock */,
+				74A910FF1EBB257900BF32EA /* SearchInteractorTests.swift */,
+			);
+			path = SearchModule;
+			sourceTree = "<group>";
+		};
+		74A911011EBB26EA00BF32EA /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				74A911021EBB271A00BF32EA /* MockSearchNetworkingService.swift */,
+				74A911041EBB278200BF32EA /* MockLocalStorageService.swift */,
+				74A911061EBB284300BF32EA /* MockSearchInteractorOutput.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		74A938441EABDB6E00E98C78 = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +550,7 @@
 			isa = PBXGroup;
 			children = (
 				74133C8F1EB9A26D00D0226B /* Common */,
+				74A910FD1EBB254C00BF32EA /* Interactors */,
 				74133C901EB9A26D00D0226B /* Services */,
 				74A938671EABDB6E00E98C78 /* Info.plist */,
 			);
@@ -1224,8 +1260,12 @@
 				74133CB91EB9A2CF00D0226B /* GitHubAPIAuthenticationTests.swift in Sources */,
 				74133CBD1EB9A2FD00D0226B /* GHUserProfileTestCase.swift in Sources */,
 				74133CC51EB9A3D300D0226B /* LocalStorageTests.swift in Sources */,
+				74A911031EBB271A00BF32EA /* MockSearchNetworkingService.swift in Sources */,
+				74A911001EBB257900BF32EA /* SearchInteractorTests.swift in Sources */,
 				74133CBB1EB9A2E900D0226B /* GitHubAPISearchTests.swift in Sources */,
+				74A911051EBB278200BF32EA /* MockLocalStorageService.swift in Sources */,
 				74133CC71EB9A89D00D0226B /* GHTestCase.swift in Sources */,
+				74A911071EBB284300BF32EA /* MockSearchInteractorOutput.swift in Sources */,
 				74133CC31EB9A3C900D0226B /* TokenStorageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
