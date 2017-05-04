@@ -7,12 +7,17 @@
 //
 
 import PromiseKit
+import CancellationToken
 
 class SearchInteractor: SearchInteractorProtocol {
     var output: SearchInteractorOutput?
     
     var searchNetworking: SearchNetworkingServiceProtocol!
     var historyStorage: LocalStorageServiceProtocol!
+    
+    lazy var searchTokenSource: CancellationTokenSource? = {
+        return CancellationTokenSource()
+    }()
     
     func prepare() {
     }
@@ -30,18 +35,19 @@ class SearchInteractor: SearchInteractorProtocol {
     
     func searchRepositories(text: String!) {
         
+        self.cancelSearch()
+        
         firstly {
-            searchNetworking.searchRepositories(withText: text, cancelltaionToken: nil)
+            searchNetworking.searchRepositories(withText: text, cancelltaionToken: searchTokenSource?.token)
         }.then { repositories -> Void in
             self.output?.searchResultsReceived(repositories)
-        }.catch { _ in
-            
+        }.always {
+            self.historyStorage.saveSearchQuery(text)
         }
-        
-        historyStorage.saveSearchQuery(text)
     }
     
     func cancelSearch() {
-        
+        searchTokenSource?.cancel()
+        searchTokenSource = nil
     }
 }
