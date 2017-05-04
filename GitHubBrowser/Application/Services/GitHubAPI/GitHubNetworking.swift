@@ -12,10 +12,10 @@ import PromiseKit
 
 struct GitHubCredentials {
     
-    var client: String?
-    var secret: String?
+    var client: String!
+    var secret: String!
     
-    var baseURL: String?
+    var baseURL: String!
 }
 
 protocol GitHubNetworkingRouter: URLRequestConvertible {

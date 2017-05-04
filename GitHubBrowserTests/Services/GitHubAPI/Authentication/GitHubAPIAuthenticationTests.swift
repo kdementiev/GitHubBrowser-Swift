@@ -13,12 +13,14 @@ import CancellationToken
 
 class GitHubAPIAuthenticationTests: GHTestCase {
     
-    let authRoute = "/authorizations/clients/"
+    var authRoute = "/authorizations/clients/"
     let authService = GitHubAuthenticationService()
     let credentials = AuthCredentials(username: "test", password: "test", code: "1234")
     
     override func setUp() {
         super.setUp()
+        
+        authRoute += GitHubNetworking.defaultNetworking.credentials.client
     }
     
     override func tearDown() {
