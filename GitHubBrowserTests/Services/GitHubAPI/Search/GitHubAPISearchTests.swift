@@ -14,7 +14,7 @@ import CancellationToken
 class GitHubAPISearchTests: GHTestCase {
     
     let searchService = GitHubSearchService()
-    let searchRoute = "/search/repositories?q=test"
+    let searchRoute = "/search/repositories"
     let searchQuery = "GitHubBrowser"
     
     override func setUp() {

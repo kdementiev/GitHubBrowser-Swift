@@ -15,7 +15,7 @@ class GitHubAPIAuthenticationTests: GHTestCase {
     
     var authRoute = "/authorizations/clients/"
     let authService = GitHubAuthenticationService()
-    let credentials = AuthCredentials(username: "test", password: "test", code: "1234")
+    let credentials = AuthCredentials(username: "test", password: "test", code: nil)
     
     override func setUp() {
         super.setUp()

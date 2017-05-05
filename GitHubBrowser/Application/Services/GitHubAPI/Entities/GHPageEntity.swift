@@ -16,7 +16,9 @@ struct GHPageEntity<Element: Mappable>: Mappable {
     var items: [Element]?
     
     init?(map: Map) {
-        
+    }
+    
+    init() {
     }
     
     mutating func mapping(map: Map) {

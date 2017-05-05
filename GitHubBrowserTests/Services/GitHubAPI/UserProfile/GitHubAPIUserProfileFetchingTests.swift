@@ -13,15 +13,10 @@ import CancellationToken
 
 class GitHubAPIUserProfileFetchingTests: GHUserProfileTestCase {
     
-    let token = "TestToken"
-    var profileRoute: String!
+    var profileRoute = "/user"
     
     override func setUp() {
         super.setUp()
-
-        profileService.prepare(withToken: token)
-        
-        profileRoute = "/user/access_token=\(token)"
     }
     
     override func tearDown() {
@@ -66,7 +61,7 @@ class GitHubAPIUserProfileFetchingTests: GHUserProfileTestCase {
     func testUserProfileFetchingUnauthorized() {
         
         let expectation = self.expectation(description: "Response expectation.")
-        self.simulateResponseJSON(withFile: "github_fetch_response_401.json", route: profileRoute)
+        self.simulateResponseJSON(withFile: "github_fetch_response_401.json", route: profileRoute, code: 401)
         
         firstly {
             profileService.fetchUserProfile(cancelltaionToken: nil)

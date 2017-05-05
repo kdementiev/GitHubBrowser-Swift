@@ -51,16 +51,16 @@ class GitHubAuthenticationService {
         }
     }
     
-    fileprivate func deleteAuthorization(withID id: Int, token: CancellationToken?) -> Promise<Void> {
+    fileprivate func deleteAuthorization(_ authEntity: GHAuthEntity, token: CancellationToken?) -> Promise<GHAuthEntity> {
         return Promise { fulfill, reject in
             
-            let task = Alamofire.request(Router.deleteKey(id: id)).response { (response: DefaultDataResponse) in
+            let task = Alamofire.request(Router.deleteKey(id: authEntity.id!)).response { (response: DefaultDataResponse) in
                 if let error = response.error {
                     reject(error)
                     return
                 }
                 
-                fulfill()
+                fulfill(authEntity)
             }
             
             token?.register {
@@ -77,8 +77,8 @@ class GitHubAuthenticationService {
             task.authenticate(user: credentials.username, password: credentials.password)
                 .responseObject(completionHandler: { (response: DataResponse<GHAuthEntity>) in
                 
-                if response.response?.statusCode == 401 {
-                    reject(AuthenticationServiceError.BadCredentials)
+                if let _ = response.response?.allHeaderFields["X-GitHub-OTP"] {
+                    reject(AuthenticationServiceError.OTPRequired)
                     return
                 }
                 
@@ -102,11 +102,18 @@ extension GitHubAuthenticationService: AuthNetworkingServiceProtocol {
     func login(withCredentials credentials: AuthCredentials, cancelltaionToken: CancellationToken?) -> Promise<String> {
         return Promise { fulfill, reject in
             
+            
             firstly {
                 self.authorize(withCredentials: credentials, token: cancelltaionToken)
-            }.then { auth -> Void in
+            }.then { auth -> Promise<GHAuthEntity> in
                 
-                fulfill(auth.token!)
+                if (auth.token?.characters.count == 0) {
+                    return self.deleteAuthorization(auth, token: cancelltaionToken)
+                }
+
+                return Promise<GHAuthEntity>(value: auth)
+            }.then { token -> Void in
+                fulfill(token.token!)
             }.catch { error in
                 reject(error)
             }

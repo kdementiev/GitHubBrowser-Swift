@@ -12,6 +12,13 @@ import XCTest
 
 class GHUserProfileTestCase: GHTestCase {
     
+    let token = "TestToken"
+    
     let profileService = GitHubUserProfileService()
     
+    override func setUp() {
+        super.setUp()
+        
+        profileService.prepare(withToken: token)
+    }
 }

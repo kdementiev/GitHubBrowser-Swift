@@ -55,23 +55,7 @@ extension GitHubSearchService: SearchNetworkingServiceProtocol {
                     return
                 }
                 
-                // Try to map data.
-                var repositories = [RepositoryRecord]()
-                
-                if let items = page.items {
-                    for (_, repository) in items.enumerated() {
-                        
-                        let record = RepositoryRecord(ownerName: repository.owner?.login,
-                                                      name: repository.name,
-                                                      description: repository.description,
-                                                      language: repository.language,
-                                                      starsCount: repository.starsCount ?? 0)
-                        
-                        repositories.append(record)
-                    }
-                }
-                
-                fulfill(repositories)
+                fulfill(page.repositoryRecordsList())
             }
             
             // Perform task cancelation.

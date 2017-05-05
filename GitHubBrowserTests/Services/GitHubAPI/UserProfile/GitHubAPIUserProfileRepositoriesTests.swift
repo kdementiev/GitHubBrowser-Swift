@@ -82,6 +82,8 @@ class GitHubAPIUserProfileRepositoriesTests: GHUserProfileTestCase {
             expectation.fulfill()
         }
         
+        tokenSource.cancel()
+        
         self.waitForExpectations()
     }
 }
