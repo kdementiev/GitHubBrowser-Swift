@@ -54,5 +54,8 @@ class GitHubNetworking {
         credentials.baseURL = plistCredentials[InfoPlist.Server] ?? GitHubNetworking.serverURL
     }
     
-    
+    func request(forEndpoint endpoint: String) throws -> URLRequest {
+        let url = try credentials.baseURL.asURL()
+        return URLRequest(url: url.appendingPathComponent(endpoint))
+    }
 }

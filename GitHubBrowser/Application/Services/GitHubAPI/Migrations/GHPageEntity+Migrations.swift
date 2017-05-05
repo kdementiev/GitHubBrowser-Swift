@@ -11,7 +11,6 @@ import Foundation
 
 extension GHPageEntity {
     
-    
     func repositoryRecordsList() -> [RepositoryRecord] {
         
         // Try to map data.
@@ -19,13 +18,7 @@ extension GHPageEntity {
         
         if let items = self.items as? [GHRepositoryEntity] {
             for (_, repository) in items.enumerated() {
-                
-                let record = RepositoryRecord(ownerName: repository.owner?.login,
-                                              name: repository.name,
-                                              description: repository.description,
-                                              language: repository.language,
-                                              starsCount: repository.starsCount ?? 0)
-                
+                let record = RepositoryRecord(repositoryEntity: repository)
                 repositories.append(record)
             }
         }

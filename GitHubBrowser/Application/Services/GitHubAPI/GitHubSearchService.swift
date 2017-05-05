@@ -18,7 +18,7 @@ class GitHubSearchService {
     enum Router: URLRequestConvertible {
         case search(query: String)
         
-        var path: String {
+        var endpoint: String {
             switch self {
             case .search(_):
                 return "/search/repositories"
@@ -33,9 +33,7 @@ class GitHubSearchService {
         }
         
         func asURLRequest() throws -> URLRequest {
-            let url = try GitHubNetworking.defaultNetworking.credentials.baseURL!.asURL()
-            let urlRequest = URLRequest(url: url.appendingPathComponent(path))
-            
+            let urlRequest = try GitHubNetworking.defaultNetworking.request(forEndpoint: endpoint)
             return try URLEncoding.default.encode(urlRequest, with: parameters)
         }
     }

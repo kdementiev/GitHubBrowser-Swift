@@ -19,7 +19,7 @@ class GitHubUserProfileService {
         case user(token: String)
         case repositories(token: String)
         
-        var path: String {
+        var endpoint: String {
             switch self {
             case .user(_):
                 return "/user"
@@ -42,8 +42,7 @@ class GitHubUserProfileService {
         }
         
         func asURLRequest() throws -> URLRequest {
-            let url = try GitHubNetworking.defaultNetworking.credentials.baseURL!.asURL()
-            let urlRequest = URLRequest(url: url.appendingPathComponent(path))
+            let urlRequest = try GitHubNetworking.defaultNetworking.request(forEndpoint: endpoint)
             return try URLEncoding.default.encode(urlRequest, with: parameters)
         }
     }
@@ -64,23 +63,15 @@ extension GitHubUserProfileService: ProfileNetworkingServiceProtocol {
                 .validate()
                 .responseObject { (response: DataResponse<GHUserEntity>) in
                 
-                    if let error = response.error {
-                        reject(error)
+                    guard let error = self.validate(response: response) else {
+
+                        let profile = UserProfileRecord(userEntity:response.value!)
+                        fulfill(profile)
+                        
                         return
                     }
                     
-                    guard let userEntity = response.result.value else {
-                        reject(NSError.cancelledError())
-                        return
-                    }
-                    
-                    let profile = UserProfileRecord(userName: userEntity.login,
-                                                    avatarUrl: userEntity.avatarUrl,
-                                                    publicRepositoriesCount: userEntity.repositories ?? 0,
-                                                    followersCount: userEntity.followers ?? 0,
-                                                    followingCount: userEntity.following ?? 0)
-                    
-                    fulfill(profile)
+                    reject(error)
             }
             
             // Perform task cancelation.
@@ -97,20 +88,16 @@ extension GitHubUserProfileService: ProfileNetworkingServiceProtocol {
                 .validate()
                 .responseArray { (response: DataResponse<[GHRepositoryEntity]>) in
                 
-                    if let error = response.error {
-                        reject(error)
+                    guard let error = self.validate(response: response) else {
+
+                        var page = GHPageEntity<GHRepositoryEntity>()
+                        page.items = response.value!
+                        fulfill(page.repositoryRecordsList())
+                        
                         return
                     }
                     
-                    guard let repositories = response.result.value else {
-                        reject(NSError.cancelledError())
-                        return
-                    }
-                
-                    // Try to map objects.
-                    var page = GHPageEntity<GHRepositoryEntity>()
-                    page.items = repositories
-                    fulfill(page.repositoryRecordsList())
+                    reject(error)
             }
             
             // Perform task cancelation.
@@ -118,6 +105,19 @@ extension GitHubUserProfileService: ProfileNetworkingServiceProtocol {
                 task.cancel()
             }
         }
+    }
+    
+    private func validate<T>(response: DataResponse<T>) -> Error? {
+        
+        if let error = response.error {
+            return error
+        }
+        
+        guard let _ = response.result.value else {
+            return NSError.cancelledError()
+        }
+        
+        return nil
     }
     
 }

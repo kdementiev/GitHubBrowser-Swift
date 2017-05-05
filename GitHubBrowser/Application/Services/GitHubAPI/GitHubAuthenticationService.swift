@@ -19,7 +19,7 @@ class GitHubAuthenticationService {
         case authorize(otp: String?)
         case deleteKey(id: Int)
         
-        var path: String {
+        var endpoint: String {
             switch self {
                 
             case .authorize(_):
@@ -44,9 +44,7 @@ class GitHubAuthenticationService {
         }
         
         func asURLRequest() throws -> URLRequest {
-            let url = try GitHubNetworking.defaultNetworking.credentials.baseURL!.asURL()
-            let urlRequest = URLRequest(url: url.appendingPathComponent(path))
-        
+            let urlRequest = try GitHubNetworking.defaultNetworking.request(forEndpoint: endpoint)
             return try JSONEncoding.default.encode(urlRequest, with: parameters)
         }
     }
