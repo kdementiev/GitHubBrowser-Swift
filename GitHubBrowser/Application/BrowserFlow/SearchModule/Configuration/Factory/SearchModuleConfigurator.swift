@@ -10,6 +10,7 @@ import UIKit
 
 class SearchModuleConfigurator {
     
+    @discardableResult
     static func configurateModule(view: SearchViewProtocol?, delegate: SearchModuleOutputProtocol?) -> (view: UIViewController?, module: SearchModuleInputProtocol?) {
         
         assert(view != nil, "Please, provide view instance.")

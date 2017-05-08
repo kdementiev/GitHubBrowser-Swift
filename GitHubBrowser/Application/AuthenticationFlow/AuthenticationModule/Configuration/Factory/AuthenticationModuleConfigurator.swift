@@ -10,6 +10,7 @@ import UIKit
 
 class AuthenticationModuleConfigurator {
     
+    @discardableResult
     static func configurateModule(view: AuthenticationViewProtocol?, delegate: AuthenticationModuleOutputProtocol?) -> (view: UIViewController?, module: AuthenticationModuleInputProtocol?) {
         
         assert(view != nil, "Please, provide view instance.")

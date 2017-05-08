@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileModuleConfigurator {
     
+    @discardableResult
     static func configurateModule(view: ProfileViewProtocol?, delegate: ProfileModuleOutputProtocol?) -> (view: UIViewController?, module: ProfileModuleInputProtocol?) {
         
         assert(view != nil, "Please, provide view instance.")
