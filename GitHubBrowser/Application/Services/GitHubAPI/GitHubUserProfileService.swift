@@ -62,16 +62,15 @@ extension GitHubUserProfileService: ProfileNetworkingServiceProtocol {
             let task = Alamofire.request(Router.user(token: accessToken))
                 .validate()
                 .responseObject { (response: DataResponse<GHUserEntity>) in
-                
-                    guard let error = self.validate(response: response) else {
-
-                        let profile = UserProfileRecord(userEntity:response.value!)
+                    
+                    switch response.result {
+                    case .success(let entity):
+                        let profile = UserProfileRecord(userEntity: entity)
                         fulfill(profile)
                         
-                        return
+                    case .failure(let error):
+                        reject(error)
                     }
-                    
-                    reject(error)
             }
             
             // Perform task cancelation.
@@ -88,16 +87,15 @@ extension GitHubUserProfileService: ProfileNetworkingServiceProtocol {
                 .validate()
                 .responseArray { (response: DataResponse<[GHRepositoryEntity]>) in
                 
-                    guard let error = self.validate(response: response) else {
-
+                    switch response.result {
+                    case .success(let items):
                         var page = GHPageEntity<GHRepositoryEntity>()
-                        page.items = response.value!
+                        page.items = items
                         fulfill(page.repositoryRecordsList())
-                        
-                        return
+ 
+                    case .failure(let error):
+                        reject(error)
                     }
-                    
-                    reject(error)
             }
             
             // Perform task cancelation.
@@ -106,18 +104,4 @@ extension GitHubUserProfileService: ProfileNetworkingServiceProtocol {
             }
         }
     }
-    
-    private func validate<T>(response: DataResponse<T>) -> Error? {
-        
-        if let error = response.error {
-            return error
-        }
-        
-        guard let _ = response.result.value else {
-            return NSError.cancelledError()
-        }
-        
-        return nil
-    }
-    
 }

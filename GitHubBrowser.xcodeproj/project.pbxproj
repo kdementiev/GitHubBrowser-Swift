@@ -24,6 +24,8 @@
 		74133CC31EB9A3C900D0226B /* TokenStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74133CC21EB9A3C900D0226B /* TokenStorageTests.swift */; };
 		74133CC51EB9A3D300D0226B /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74133CC41EB9A3D300D0226B /* LocalStorageTests.swift */; };
 		74133CC71EB9A89D00D0226B /* GHTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74133CC61EB9A89D00D0226B /* GHTestCase.swift */; };
+		74512A841EC093C5008B5A62 /* GitHubAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74512A831EC093C5008B5A62 /* GitHubAuthenticationService.swift */; };
+		74512A861EC093DA008B5A62 /* GitHubAuthenticationRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74512A851EC093DA008B5A62 /* GitHubAuthenticationRequestAdapter.swift */; };
 		7456E0C21EBC553100BBA317 /* GHPageEntity+Migrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7456E0C11EBC553100BBA317 /* GHPageEntity+Migrations.swift */; };
 		7456E0C41EBC83EA00BBA317 /* UserProfileRecord+GitHubMigrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7456E0C31EBC83EA00BBA317 /* UserProfileRecord+GitHubMigrations.swift */; };
 		7456E0C61EBC849100BBA317 /* RepositoryRecord+GitHubMigrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7456E0C51EBC849100BBA317 /* RepositoryRecord+GitHubMigrations.swift */; };
@@ -94,7 +96,6 @@
 		74A939221EB2946900E98C78 /* AuthNetworkingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9391C1EB2946900E98C78 /* AuthNetworkingServiceProtocol.swift */; };
 		74A939231EB2946900E98C78 /* ProfileNetworkingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9391D1EB2946900E98C78 /* ProfileNetworkingServiceProtocol.swift */; };
 		74A939241EB2946900E98C78 /* SearchNetworkingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9391E1EB2946900E98C78 /* SearchNetworkingServiceProtocol.swift */; };
-		74A939251EB2946900E98C78 /* GitHubAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9391F1EB2946900E98C78 /* GitHubAuthenticationService.swift */; };
 		74A939261EB2946900E98C78 /* GitHubSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A939201EB2946900E98C78 /* GitHubSearchService.swift */; };
 		74A939271EB2946900E98C78 /* GitHubUserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A939211EB2946900E98C78 /* GitHubUserProfileService.swift */; };
 		74A939291EB5130A00E98C78 /* GitHubNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A939281EB5130A00E98C78 /* GitHubNetworking.swift */; };
@@ -144,6 +145,8 @@
 		74133CC21EB9A3C900D0226B /* TokenStorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenStorageTests.swift; sourceTree = "<group>"; };
 		74133CC41EB9A3D300D0226B /* LocalStorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
 		74133CC61EB9A89D00D0226B /* GHTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHTestCase.swift; sourceTree = "<group>"; };
+		74512A831EC093C5008B5A62 /* GitHubAuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAuthenticationService.swift; sourceTree = "<group>"; };
+		74512A851EC093DA008B5A62 /* GitHubAuthenticationRequestAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAuthenticationRequestAdapter.swift; sourceTree = "<group>"; };
 		7456E0C11EBC553100BBA317 /* GHPageEntity+Migrations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GHPageEntity+Migrations.swift"; sourceTree = "<group>"; };
 		7456E0C31EBC83EA00BBA317 /* UserProfileRecord+GitHubMigrations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserProfileRecord+GitHubMigrations.swift"; sourceTree = "<group>"; };
 		7456E0C51EBC849100BBA317 /* RepositoryRecord+GitHubMigrations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RepositoryRecord+GitHubMigrations.swift"; sourceTree = "<group>"; };
@@ -219,7 +222,6 @@
 		74A9391C1EB2946900E98C78 /* AuthNetworkingServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthNetworkingServiceProtocol.swift; sourceTree = "<group>"; };
 		74A9391D1EB2946900E98C78 /* ProfileNetworkingServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNetworkingServiceProtocol.swift; sourceTree = "<group>"; };
 		74A9391E1EB2946900E98C78 /* SearchNetworkingServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNetworkingServiceProtocol.swift; sourceTree = "<group>"; };
-		74A9391F1EB2946900E98C78 /* GitHubAuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAuthenticationService.swift; sourceTree = "<group>"; };
 		74A939201EB2946900E98C78 /* GitHubSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubSearchService.swift; sourceTree = "<group>"; };
 		74A939211EB2946900E98C78 /* GitHubUserProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubUserProfileService.swift; sourceTree = "<group>"; };
 		74A939281EB5130A00E98C78 /* GitHubNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubNetworking.swift; sourceTree = "<group>"; };
@@ -378,6 +380,15 @@
 				74133CA91EB9A2AC00D0226B /* github_repos_fetch_response_200.json */,
 			);
 			path = responses;
+			sourceTree = "<group>";
+		};
+		74512A821EC093C5008B5A62 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				74512A831EC093C5008B5A62 /* GitHubAuthenticationService.swift */,
+				74512A851EC093DA008B5A62 /* GitHubAuthenticationRequestAdapter.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		7456E0C01EBC54FF00BBA317 /* Migrations */ = {
@@ -938,7 +949,7 @@
 				7456E0C01EBC54FF00BBA317 /* Migrations */,
 				74A9392A1EB5139100E98C78 /* Entities */,
 				74A9391B1EB2946900E98C78 /* Contract */,
-				74A9391F1EB2946900E98C78 /* GitHubAuthenticationService.swift */,
+				74512A821EC093C5008B5A62 /* Authentication */,
 				74A939201EB2946900E98C78 /* GitHubSearchService.swift */,
 				74A939211EB2946900E98C78 /* GitHubUserProfileService.swift */,
 				74A939281EB5130A00E98C78 /* GitHubNetworking.swift */,
@@ -1235,6 +1246,7 @@
 				74A9392E1EB5199800E98C78 /* GHRepositoryEntity.swift in Sources */,
 				74A938EA1EABDDFB00E98C78 /* ProfileModuleProtocol.swift in Sources */,
 				74F007C01EB2430D00CE4CF6 /* SearchHistoryDataProvider.swift in Sources */,
+				74512A861EC093DA008B5A62 /* GitHubAuthenticationRequestAdapter.swift in Sources */,
 				74A938D41EABDDF100E98C78 /* SearchInteractor.swift in Sources */,
 				74A939171EB1255700E98C78 /* SearchQueryEntity.swift in Sources */,
 				747271351EAE19A000798E00 /* TokenStorageServiceProtocol.swift in Sources */,
@@ -1256,11 +1268,11 @@
 				74A939001EABE4F600E98C78 /* UITableViewCell+Usability.swift in Sources */,
 				747271431EAE3ECC00798E00 /* UnauthorizedTableViewCell.swift in Sources */,
 				747271471EAE434300798E00 /* RepositoriesDataProvider.swift in Sources */,
+				74512A841EC093C5008B5A62 /* GitHubAuthenticationService.swift in Sources */,
 				74A938A21EABDDC500E98C78 /* AuthenticationRouterProtocol.swift in Sources */,
 				74A938A01EABDDC500E98C78 /* AuthenticationModuleProtocol.swift in Sources */,
 				74A938EC1EABDDFB00E98C78 /* ProfileRouterProtocol.swift in Sources */,
 				74A939301EB519F700E98C78 /* GHUserEntity.swift in Sources */,
-				74A939251EB2946900E98C78 /* GitHubAuthenticationService.swift in Sources */,
 				7456E0C61EBC849100BBA317 /* RepositoryRecord+GitHubMigrations.swift in Sources */,
 				747271201EADE6E000798E00 /* RepositoryTableViewCell.swift in Sources */,
 				74A939271EB2946900E98C78 /* GitHubUserProfileService.swift in Sources */,

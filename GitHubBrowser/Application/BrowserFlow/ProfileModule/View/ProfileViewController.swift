@@ -15,17 +15,6 @@ class ProfileViewController: UITableViewController {
     @IBOutlet weak var userProfileView: UserProfileHeaderView!
     @IBOutlet weak var footerView: UIView!
     
-//    fileprivate var dataProvider: TableViewDataProvider? {
-//        didSet {
-//            self.tableView.dataSource = dataProvider
-//            self.tableView.delegate = dataProvider
-//            
-//            // Perform table view reload with animation.
-//            let sections = NSIndexSet(indexesIn: NSMakeRange(0, tableView.numberOfSections))
-//            self.tableView.reloadSections(sections as IndexSet, with: .automatic)
-//        }
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,11 +81,16 @@ extension ProfileViewController : ProfileViewProtocol {
         
         tableView.contentProvider = NoContentStateDataProvider()
         
+        // Disable required controlls.
         self.activateAuthorizedState()
     }
     
     func showActivity() {
         refreshControl?.beginRefreshing()
+    }
+    
+    func hideActivity() {
+        refreshControl?.endRefreshing()
     }
     
     func showUserProfile(_ profile: UserProfileRecord) {

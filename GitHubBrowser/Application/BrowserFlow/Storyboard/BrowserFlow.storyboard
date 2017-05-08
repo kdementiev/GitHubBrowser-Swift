@@ -168,7 +168,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.27601413600000002" green="0.38838447729999998" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <connections>
-                            <action selector="onRefreshAction:" destination="6p1-h5-7eV" eventType="valueChanged" id="vuI-LS-WpP"/>
+                            <action selector="onRefreshAction:" destination="6p1-h5-7eV" eventType="valueChanged" id="Kbw-Yw-gM6"/>
                         </connections>
                     </refreshControl>
                     <connections>

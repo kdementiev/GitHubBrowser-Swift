@@ -29,6 +29,7 @@ protocol ProfileViewProtocol: class {
     func showNoContentState()
     
     func showActivity()
+    func hideActivity()
     
     func showUserProfile(_ profile: UserProfileRecord)
     func showRepositories(_ repositories:[RepositoryRecord]?)

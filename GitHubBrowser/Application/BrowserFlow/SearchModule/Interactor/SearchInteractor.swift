@@ -15,9 +15,7 @@ class SearchInteractor: SearchInteractorProtocol {
     var searchNetworking: SearchNetworkingServiceProtocol!
     var historyStorage: LocalStorageServiceProtocol!
     
-    lazy var searchTokenSource: CancellationTokenSource? = {
-        return CancellationTokenSource()
-    }()
+    lazy var searchTokenSource: CancellationTokenSource? = CancellationTokenSource()
     
     func prepare() {
     }

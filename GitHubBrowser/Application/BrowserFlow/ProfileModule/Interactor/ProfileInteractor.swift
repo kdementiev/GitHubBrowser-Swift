@@ -8,6 +8,7 @@
 
 import Foundation
 import PromiseKit
+import CancellationToken
 
 class ProfileInteractor {
     
@@ -18,6 +19,8 @@ class ProfileInteractor {
     }
     
     fileprivate var state: State = .NotPrepared
+    
+    fileprivate lazy var profileTokenSource: CancellationTokenSource? = CancellationTokenSource()
     
     var output: ProfileInteractorOutput?
     
@@ -41,6 +44,11 @@ class ProfileInteractor {
         tokenStorage?.removeTokenFromSecureStorage()
         
         self.processWithUnauthorizedState()
+    }
+    
+    fileprivate func cancelTasks() {
+        profileTokenSource?.cancel()
+        profileTokenSource = nil
     }
 }
 
@@ -73,16 +81,17 @@ extension ProfileInteractor: ProfileInteractorProtocol {
     }
     
     func fetchData() {
+    
+        self.cancelTasks()
         
-        // Start 2 async promises
-        
-        profileNetworking?.fetchUserRepositories(cancelltaionToken: nil).then { repositiries -> Void in
+        // Run 2 async tasks
+        profileNetworking?.fetchUserRepositories(cancelltaionToken: profileTokenSource?.token).then { repositiries -> Void in
             self.output?.userRepositoriesReceived(repositiries)
         }.catch { error in
             self.unauthorizeUser()
         }
         
-        profileNetworking?.fetchUserProfile(cancelltaionToken: nil).then { profile -> Void in
+        profileNetworking?.fetchUserProfile(cancelltaionToken: profileTokenSource?.token).then { profile -> Void in
             self.output?.userProfileReveived(profile)
         }.catch { error in
             self.unauthorizeUser()

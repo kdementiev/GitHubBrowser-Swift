@@ -23,9 +23,7 @@ extension TableViewDataProvider {
         Override this method to perform you own customization.
     */
     func reloadData(_ tableView: UITableView!) {
-
-        tableView.reloadData()
-//        let sections = NSIndexSet(indexesIn: NSMakeRange(0, tableView.numberOfSections))
-//        tableView.reloadSections(sections as IndexSet, with: .automatic)
+        let sections = NSIndexSet(indexesIn: NSMakeRange(0, tableView.numberOfSections))
+        tableView.reloadSections(sections as IndexSet, with: .automatic)
     }
 }

@@ -53,6 +53,7 @@ class ProfilePresenter: ProfilePresenterProtocol {
     
     func userNotAuthorized() {
         view?.showUnauthorizedState()
+        view?.hideActivity()
     }
     
     func userProfileReveived(_ profile: UserProfileRecord) {
@@ -61,6 +62,7 @@ class ProfilePresenter: ProfilePresenterProtocol {
     
     func userRepositoriesReceived(_ repositories:[RepositoryRecord]?) {
         view?.showRepositories(repositories)
+        view?.hideActivity()
     }
 }
 

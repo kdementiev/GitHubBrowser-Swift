@@ -46,14 +46,13 @@ extension GitHubSearchService: SearchNetworkingServiceProtocol {
         return Promise { fulfill, reject in
             
             let task = Alamofire.request(Router.search(query: text)).responseObject { (response: DataResponse<GHPageEntity<GHRepositoryEntity>>) in
-                
-                // Validate response.
-                guard let page = response.result.value else {
-                    reject( NSError.cancelledError() )
-                    return
+
+                switch response.result {
+                case .success(let page):
+                    fulfill(page.repositoryRecordsList())
+                case .failure(let error):
+                    reject(error)
                 }
-                
-                fulfill(page.repositoryRecordsList())
             }
             
             // Perform task cancelation.

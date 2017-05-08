@@ -15,8 +15,8 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RepositoryTableViewCell" rowHeight="82" id="DTH-mK-SZI" customClass="RepositoryTableViewCell" customModule="GitHubBrowser" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DTH-mK-SZI" id="A8b-iD-hBA" customClass="RepositoryTableViewCell" customModule="GitHubBrowser" customModuleProvider="target">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DTH-mK-SZI" id="A8b-iD-hBA">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="81.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="top-shadow" translatesAutoresizingMaskIntoConstraints="NO" id="5xM-dh-zeo">

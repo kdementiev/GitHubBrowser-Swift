@@ -11,7 +11,7 @@ import OHHTTPStubs
 
 class GHTestCase: XCTestCase {
     
-    private static let ExpectationsTimeout = 3.0
+    private static let ExpectationsTimeout = 4.0
 
     override func tearDown() {
         self.clearSimulations()
