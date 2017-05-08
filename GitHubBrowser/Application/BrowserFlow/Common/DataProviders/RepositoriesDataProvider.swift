@@ -10,7 +10,7 @@ import UIKit
 
 class RepositoriesDataProvider: NSObject {
     
-    fileprivate let CellEstimatedHeight: CGFloat = 82
+    static let CellEstimatedHeight: CGFloat = 82
     
     fileprivate var repositories: [RepositoryRecord]?
     
@@ -28,10 +28,6 @@ extension RepositoriesDataProvider: TableViewDataProvider {
     func prepare(tableView: UITableView!) {
         // We need to register our cell.
         RepositoryTableViewCell.registerCell(tableView: tableView)
-
-        // Prepare auto-sized cells.
-        tableView.estimatedRowHeight = CellEstimatedHeight
-        tableView.rowHeight = UITableViewAutomaticDimension
     }
 }
 

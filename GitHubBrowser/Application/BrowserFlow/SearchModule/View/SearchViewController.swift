@@ -20,6 +20,16 @@ class SearchViewController: UIViewController {
 
         // Notify presenter layer with ready state.
         self.output?.viewReadyForInteraction()
+        
+        // Be ready with tableView custom appearance.
+        self.prepareTableViewAppearance()
+    }
+    
+    private func prepareTableViewAppearance() {
+        
+        // Activate automatic cell sizing.
+        tableView.estimatedRowHeight = RepositoriesDataProvider.CellEstimatedHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     // MARK: - Notification Helpers -

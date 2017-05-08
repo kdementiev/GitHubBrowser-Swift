@@ -49,10 +49,15 @@ class ProfileViewController: UITableViewController {
     
     fileprivate func prepareTableViewAppearance() {
         
+        // Apply insets
         let topInset = UIApplication.shared.statusBarFrame.size.height
         let bottomInset = self.tabBarController?.tabBar.bounds.size.height ?? 0
         
         self.tableView?.contentInset = UIEdgeInsetsMake(topInset, 0, bottomInset, 0)
+        
+        // Activate automatic cell sizing.
+        tableView.estimatedRowHeight = RepositoriesDataProvider.CellEstimatedHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     // MARK: - User Input -
