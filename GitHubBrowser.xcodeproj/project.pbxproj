@@ -1451,7 +1451,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 422FFDF6DE8DD77F1BD86083 /* Pods-GitHubBrowserTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = WWM485UMH5;
@@ -1469,7 +1469,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F7D3A753C7AF0B96AC9C942D /* Pods-GitHubBrowserTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = WWM485UMH5;
